@@ -20,7 +20,7 @@ else
 		yay fish \
 		vlc gthumb v4l2loopback-dkms gst-plugin-pipewire obs-studio \
 		ibus ibus-libpinyin \
-		cmake clang rustup go ripgrep \
+		cmake clang rustup go ripgrep bear \
 		ttf-firacode-nerd noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming
 	@sudo pacman -Rcs gnome-music gnome-photos epiphany totem
 	@yay -S linuxqq wemeet-bin qt5-wayland wechat-uos v2raya ttf-symbola bibata-cursor-theme adw-gtk3-git 
