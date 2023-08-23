@@ -1,7 +1,7 @@
 is_Arch := $(shell lsb_release -d | grep Arch)
 CONFIG_DIR := ~/.config
 PWD := $(shell pwd)
-OBJS := $(shell find . -maxdepth 1 -type d | grep -v 'applications' | tail -n +2 | sed 's/.\///g')
+OBJS := $(shell find . -maxdepth 1 -type d | grep -v 'applications' | grep -v '.git' | tail -n +2 | sed 's/.\///g')
 OBJ_FILES := $(foreach obj_dir,$(OBJS),$(shell find $(obj_dir) -type f))
 DESKTOP_APP_FILES := $(shell find ./applications -type f | sed 's/.\/applications\///g')
 DESKTOP_FILE_DIR := ~/.local/share/applications
