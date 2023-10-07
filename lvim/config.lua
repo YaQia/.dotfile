@@ -7,6 +7,7 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.relativenumber = false
 vim.opt.foldmethod = "indent"
+vim.opt.shell = "/usr/bin/bash"
 -- vim.opt.foldclose = ''
 -- vim.opt.foldenable = false
 vim.opt.foldlevelstart = 99
@@ -59,18 +60,57 @@ lvim.builtin.treesitter.indent.disable = { "yaml", "python", "go", "c", "cpp", "
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 
 -- -- always installed on startup, useful for parsers without a strict filetype
--- lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex" }
+lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex" }
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
 -- --- disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = false
+lvim.lsp.installer.setup.automatic_installation = true
 
 -- ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pylsp")
+-- some settings can only passed as commandline flags, see `clangd --help`
+local clangd_flags = {
+  -- "-std=c++23",
+  "--background-index",
+  "--fallback-style=Google",
+  "--all-scopes-completion",
+  "--clang-tidy",
+  "--log=error",
+  "--suggest-missing-includes",
+  "--cross-file-rename",
+  "--completion-style=detailed",
+  "--pch-storage=memory", -- could also be disk
+  "--folding-ranges",
+  "--enable-config", -- clangd 11+ supports reading from .clangd configuration file
+  "--offset-encoding=utf-16", --temporary fix for null-ls
+  -- "--limit-references=1000",
+  -- "--limit-resutls=1000",
+  -- "--malloc-trim",
+  -- "--clang-tidy-checks=-*,llvm-*,clang-analyzer-*,modernize-*,-modernize-use-trailing-return-type",
+  -- "--header-insertion=never",
+  -- "--query-driver=<list-of-white-listed-complers>"
+}
+
+local provider = "clangd"
+
+local opts = {
+  cmd = { provider, unpack(clangd_flags) },
+}
+
+require("lvim.lsp.manager").setup("clangd", opts)
+require("lvim.lsp.manager").setup("cmake")
+require("lvim.lsp.manager").setup("rust_analyzer")
+require("lvim.lsp.manager").setup("gopls")
+require("lvim.lsp.manager").setup("bashls")
+require("lvim.lsp.manager").setup("lua_ls")
+require("lvim.lsp.manager").setup("yamlls")
+require("lvim.lsp.manager").setup("pylsp")
+require("lvim.lsp.manager").setup("html")
+require("lvim.lsp.manager").setup("cssls")
+require("lvim.lsp.manager").setup("cssmodules_ls")
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
@@ -98,6 +138,8 @@ lvim.builtin.treesitter.indent.disable = { "yaml", "python", "go", "c", "cpp", "
 --     filetypes = { "typescript", "typescriptreact" },
 --   },
 -- }
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup { { exe = "clang-format", args = { "-style=Microsoft" } } }
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
@@ -138,9 +180,28 @@ lvim.plugins = {
     {
         "ray-x/lsp_signature.nvim",
     },
-    {
-        "mfussenegger/nvim-dap-python"
-    },
+    -- {
+    --     "mfussenegger/nvim-dap-python"
+    -- },
+    -- {
+    --     "simrat39/rust-tools.nvim"
+    -- },
+    -- {
+    --     "saecki/crates.nvim",
+    --     -- version = "v0.3.0",
+    --     event = { "BufRead Cargo.toml" },
+    --     dependencies = { { "nvim-lua/plenary.nvim" } },
+    --     config = function()
+    --         require("crates").setup()
+    --         --     null_ls = {
+    --         --         enabled = true,
+    --         --         name = "crates.nvim",
+    --         --     },
+    --         --     popup = {
+    --         --         border = "rounded",
+    --         --     },
+    --     end,
+    -- },
 }
 local cfg = {
     hint_prefix = "• ",
@@ -178,5 +239,3 @@ vim.api.nvim_create_autocmd("ModeChanged", {
         end
     end,
 })
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup { { exe = "clang-format", args = { "-style=Microsoft" } } }
