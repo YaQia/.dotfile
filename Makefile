@@ -25,12 +25,6 @@ else
 	@sudo pacman -Rcs gnome-music gnome-photos epiphany totem
 	@yay -S linuxqq wemeet-bin qt5-wayland wechat-uos v2raya ttf-symbola bibata-cursor-theme adw-gtk3-git 
 	@rustup install rust rust-src
-	@# setup lunarvim
-	@mkdir ~/.npm-global
-	@npm config set prefix '~/.npm-global'
-	@echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.profile
-	@souce ~/.profile
-	@LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 endif
 
 config:

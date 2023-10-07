@@ -1,5 +1,5 @@
 -- enable cache to speed up nvim load
-vim.loader.disable()
+vim.loader.enable()
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
