@@ -1,6 +1,5 @@
 -- Markdown
-return
-    {
+return {
   "iamcco/markdown-preview.nvim",
   ft = "markdown",
   build = function()

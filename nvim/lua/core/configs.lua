@@ -1,5 +1,7 @@
 -- enable cache to speed up nvim load
 vim.loader.enable()
+-- this should be can for each computer
+vim.g.node_host_prog = '/home/ethan/.npm-global/bin/neovim-node-host'
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -39,6 +41,9 @@ o.updatetime = 300
 o.whichwrap:append("hl") -- I only use hl now
 -- o.iskeyword:append("-")                -- I don't like it, it is dangerous
 -- o.formatoptions:remove("cro")
+
+-- colorscheme
+-- vim.cmd.colorscheme("darkplus")
 
 -- lsp configs
 local signs = {

@@ -57,10 +57,33 @@ keymap("v", "p", '"_dP')
 keymap("x", "<A-j>", ":m '>+1<cr>gv=gv", opt)
 keymap("x", "<A-k>", ":m '<-2<cr>gv=gv", opt)
 
-keymap("n",    "<C-e>",
-    function()
-        local result = vim.treesitter.get_captures_at_cursor(0)
-        print(vim.inspect(result))
-    end,
-    { noremap = true, silent = false }
-)
+keymap("n", "<C-e>", function()
+	local result = vim.treesitter.get_captures_at_cursor(0)
+	print(vim.inspect(result))
+end, { noremap = true, silent = false })
+
+-- lsp keymaps
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+	callback = function(ev)
+		-- Enable completion triggered by <c-x><c-o>
+		vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+		-- Buffer local mappings.
+		-- See `:help vim.lsp.*` for documentation on any of the below functions
+		local opts = { buffer = ev.buf }
+		keymap("n", "gD", vim.lsp.buf.declaration, opts)
+		keymap("n", "gd", vim.lsp.buf.definition, opts)
+		keymap("n", "gr", vim.lsp.buf.references, opts)
+		keymap("n", "K", vim.lsp.buf.hover, opts)
+		keymap("n", "gi", vim.lsp.buf.implementation, opts)
+		-- keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+		-- keymapis useless ↓
+		-- keymapset("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
+		-- keymapset("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+		-- keymapset("n", "<leader>wl", function()
+		--  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        -- end, opts)
+		-- keymap("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+	end,
+})

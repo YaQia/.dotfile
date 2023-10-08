@@ -1,4 +1,3 @@
-
 local config = function()
   local crates = require("crates")
   local cmp = require("cmp")
