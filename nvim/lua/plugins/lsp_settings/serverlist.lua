@@ -5,7 +5,7 @@ return {
   "bashls",
   "lua_ls",
   "yamlls",
-  "pylsp",
+  "pyright",
   "html",
   "cssls",
   "cssmodules_ls",

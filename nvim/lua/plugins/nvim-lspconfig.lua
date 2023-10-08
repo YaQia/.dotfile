@@ -1,46 +1,68 @@
 local config = function()
-  -- local function lsp_highlight_document(client, bufnr)
-  --   -- Set autocommands conditional on server_capabilities
-  --   -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#highlight-symbol-under-cursor
-  --   if client.server_capabilities.documentHighlightProvider then
-  --     vim.api.nvim_create_augroup("lsp_document_highlight", {
-  --       clear = false,
-  --     })
-  --     vim.api.nvim_clear_autocmds({
-  --       buffer = bufnr,
-  --       group = "lsp_document_highlight",
-  --     })
-  --     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  --       group = "lsp_document_highlight",
-  --       buffer = bufnr,
-  --       callback = vim.lsp.buf.document_highlight,
-  --     })
-  --     vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-  --       group = "lsp_document_highlight",
-  --       buffer = bufnr,
-  --       callback = vim.lsp.buf.clear_references,
-  --     })
-  --   end
-  -- end
+	-- local function lsp_highlight_document(client, bufnr)
+	--   -- Set autocommands conditional on server_capabilities
+	--   -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#highlight-symbol-under-cursor
+	--   if client.server_capabilities.documentHighlightProvider then
+	--     vim.api.nvim_create_augroup("lsp_document_highlight", {
+	--       clear = false,
+	--     })
+	--     vim.api.nvim_clear_autocmds({
+	--       buffer = bufnr,
+	--       group = "lsp_document_highlight",
+	--     })
+	--     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+	--       group = "lsp_document_highlight",
+	--       buffer = bufnr,
+	--       callback = vim.lsp.buf.document_highlight,
+	--     })
+	--     vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+	--       group = "lsp_document_highlight",
+	--       buffer = bufnr,
+	--       callback = vim.lsp.buf.clear_references,
+	--     })
+	--   end
+	-- end
 
-  require("lspconfig.ui.windows").default_options.border = "rounded"
-  local lspconfig = require("lspconfig")
-  local servers = require("plugins.lsp_settings.serverlist")
+	-- require("mason").setup({
+	-- 	ui = {
+	-- 		border = "rounded",
+	-- 	},
+	-- })
+	local servers = {
+		"clangd",
+		"rust_analyzer",
+		"gopls",
+		"bashls",
+		"lua_ls",
+		"yamlls",
+		"pyright",
+		"html",
+		"cssls",
+		"cssmodules_ls",
+	}
+	-- require("mason-lspconfig").setup({
+	-- 	ensure_installed = servers,
+	-- 	automatic_installation = true,
+	-- })
+	require("lspconfig.ui.windows").default_options.border = "rounded"
+	local lspconfig = require("lspconfig")
 
-  local opts = {}
-  for _, server in pairs(servers) do
-    local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
-    if require_ok then
-      opts = vim.tbl_deep_extend("force", conf_opts, opts)
-    end
+	local opts
+	for _, server in pairs(servers) do
+		opts = {}
+		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
+		if require_ok then
+			opts = vim.tbl_deep_extend("force", conf_opts, opts)
+		end
 
-    lspconfig[server].setup(opts)
-  end
+		lspconfig[server].setup(opts)
+	end
 end
 
 return {
-  "neovim/nvim-lspconfig",
-  lazy = false,
-  -- event = { "BufReadPost", "BufNewFile" },
-  config = config,
+	"neovim/nvim-lspconfig",
+	-- lazy = false,
+	dependencies = { "williamboman/mason.nvim" },
+	event = { "VimEnter", "BufReadPost", "BufNewFile" },
+	config = config,
 }

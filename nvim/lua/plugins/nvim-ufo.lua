@@ -16,7 +16,7 @@ end
 
 return {
   "kevinhwang91/nvim-ufo",
-  event = "InsertEnter",
+  event = "VeryLazy",
   dependencies = "kevinhwang91/promise-async",
   config = config,
 }

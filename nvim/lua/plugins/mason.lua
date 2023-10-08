@@ -6,7 +6,7 @@ local opts = {
 
 return {
   "williamboman/mason.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   -- cmd = { "Mason", "MasonInstall", "MasonUninstall" },
   -- keys = {
   --   { "<leader>mh", "<cmd>Mason<cr>", desc = "Home" },

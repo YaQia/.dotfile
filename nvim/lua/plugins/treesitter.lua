@@ -53,7 +53,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   -- dependencies = "nvim-treesitter/playground",
   build = ":TSUpdate",
-  event = "VeryLazy",
+	event = "VeryLazy",
   config = function ()
     local configs = require("nvim-treesitter.configs")
     configs.setup(opts)
