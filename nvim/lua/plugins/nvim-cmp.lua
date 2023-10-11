@@ -76,7 +76,11 @@ local config = function()
       { name = "path" },
     }),
     formatting = {
-      fields = { "abbr", "kind", --[[ "menu" ]] },
+      fields = {
+        "abbr",
+        "kind",
+        --[[ "menu" ]]
+      },
       format = require("lspkind").cmp_format({
         mode = "symbol_text", -- show symbol annotations and text
         maxwidth = 50,     -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
@@ -92,13 +96,13 @@ local config = function()
       --   -- Kind icons
       --   -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       --   vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-      --   vim_item.menu = ({
-      --     nvim_lsp = "[LSP]",
-      --     nvim_lua = "[NVIM]",
-      --     luasnip = "[LuaSnip]",
-      --     buffer = "[Buffer]",
-      --     path = "[Path]",
-      --   })[entry.source.name]
+      --   -- vim_item.menu = ({
+      --   --   nvim_lsp = "[LSP]",
+      --   --   nvim_lua = "[NVIM]",
+      --   --   luasnip = "[LuaSnip]",
+      --   --   buffer = "[Buffer]",
+      --   --   path = "[Path]",
+      --   -- })[entry.source.name]
       --   return vim_item
       -- end,
     },

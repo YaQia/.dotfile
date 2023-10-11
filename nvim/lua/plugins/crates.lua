@@ -1,64 +1,77 @@
 local config = function()
-  local crates = require("crates")
-  local cmp = require("cmp")
-  crates.setup({
-    popup = {
-      border = "rounded",
-    },
-  })
+	local crates = require("crates")
+	local cmp = require("cmp")
+	crates.setup({
+		popup = {
+			border = "rounded",
+		},
+	})
 
-  vim.api.nvim_create_autocmd("BufRead", {
-    group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
-    pattern = "Cargo.toml",
-    callback = function()
-      cmp.setup.buffer({ sources = { { name = "crates" } } })
-    end,
-  })
+	vim.api.nvim_create_autocmd("BufRead", {
+		group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
+		pattern = "Cargo.toml",
+		callback = function()
+			cmp.setup.buffer({ sources = { { name = "crates" } } })
+		end,
+	})
 
-  local function show_documentation()
-    local filetype = vim.bo.filetype
-    if vim.tbl_contains({ "vim", "help" }, filetype) then
-      vim.cmd("h " .. vim.fn.expand("<cword>"))
-    elseif vim.tbl_contains({ "man" }, filetype) then
-      vim.cmd("Man " .. vim.fn.expand("<cword>"))
-    elseif vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
-      require("crates").show_popup()
-    else
-      vim.lsp.buf.hover()
-    end
-  end
+	local function show_documentation()
+		local filetype = vim.bo.filetype
+		if vim.tbl_contains({ "vim", "help" }, filetype) then
+			vim.cmd("h " .. vim.fn.expand("<cword>"))
+		elseif vim.tbl_contains({ "man" }, filetype) then
+			vim.cmd("Man " .. vim.fn.expand("<cword>"))
+		elseif vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
+			require("crates").show_popup()
+		else
+			vim.lsp.buf.hover()
+		end
+	end
 
-  vim.keymap.set("n", "K", show_documentation, { silent = true })
+	vim.keymap.set("n", "K", show_documentation, { silent = true })
 
-  local opts = { silent = true }
+	local wk = require("which-key")
+	wk.register({
+		C = {
+			name = "Crates",
+			t = { crates.toggle, "Toggle" },
+			r = { crates.reload, "Reload" },
+			v = { crates.show_versions_popup, "Version" },
+			f = { crates.show_features_popup, "Features" },
+			d = { crates.show_dependencies_popup, "Dependencies" },
+			u = { crates.update_crate, "Update" },
+			a = { crates.update_all_crates, "Update All" },
+			U = { crates.upgrade_crate, "Upgrade" },
+			A = { crates.upgrade_all_crates, "Upgrade All" },
+		},
+	}, {
+		mode = "n", -- NORMAL mode
+		prefix = "<leader>",
+		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+		silent = true, -- use `silent` when creating keymaps
+		noremap = true, -- use `noremap` when creating keymaps
+	})
 
-  vim.keymap.set("n", "<leader>ct", crates.toggle, opts)
-  vim.keymap.set("n", "<leader>cr", crates.reload, opts)
-
-  vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, opts)
-  vim.keymap.set("n", "<leader>cf", crates.show_features_popup, opts)
-  vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, opts)
-
-  vim.keymap.set("n", "<leader>cu", crates.update_crate, opts)
-  vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)
-  vim.keymap.set("n", "<leader>ca", crates.update_all_crates, opts)
-  vim.keymap.set("n", "<leader>cU", crates.upgrade_crate, opts)
-  vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, opts)
-  vim.keymap.set("n", "<leader>cA", crates.upgrade_all_crates, opts)
-
-  vim.keymap.set("n", "<leader>ce", crates.expand_plain_crate_to_inline_table, opts)
-  vim.keymap.set("n", "<leader>cE", crates.extract_crate_into_table, opts)
-
-  vim.keymap.set("n", "<leader>cH", crates.open_homepage, opts)
-  vim.keymap.set("n", "<leader>cR", crates.open_repository, opts)
-  vim.keymap.set("n", "<leader>cD", crates.open_documentation, opts)
-  vim.keymap.set("n", "<leader>cC", crates.open_crates_io, opts)
+	wk.register({
+		C = {
+			name = "Crates",
+			u = { crates.update_crates, "Update" },
+			U = { crates.upgrade_crates, "Upgrade" },
+		},
+	}, {
+		mode = "v", -- VISUAL mode
+		prefix = "<leader>",
+		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+		silent = true, -- use `silent` when creating keymaps
+		noremap = true, -- use `noremap` when creating keymaps
+		nowait = true, -- use `nowait` when creating keymaps
+	})
 end
 
 -- Rust cargo
 return {
-  "saecki/crates.nvim",
-  event = { "BufRead Cargo.toml" },
-  dependencies = { "nvim-lua/plenary.nvim" },
-  config = config,
+	"saecki/crates.nvim",
+	event = { "BufRead Cargo.toml" },
+	dependencies = { "nvim-lua/plenary.nvim" },
+	config = config,
 }
