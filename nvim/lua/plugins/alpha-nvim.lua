@@ -17,7 +17,7 @@ local config = function()
 	dashboard.section.header.opts.hl = "WarningMsg"
 	dashboard.section.buttons.val = {
 		dashboard.button("f", "󰈞  Find file", "<Cmd>Telescope find_files <CR>"),
-		dashboard.button("e", "  New file", "<Cmd>ene <BAR> startinsert <CR>"),
+		dashboard.button("n", "  New file", "<Cmd>ene <BAR> startinsert <CR>"),
 		dashboard.button("r", "  Recently used files", "<Cmd>Telescope oldfiles <CR>"),
 		dashboard.button("t", "  Find text", "<Cmd>Telescope live_grep <CR>"),
 		dashboard.button("c", "  Configuration", "<Cmd>e ~/.config/nvim/init.lua <CR>"),

@@ -1,4 +1,4 @@
-set --path -x PATH ~/.cargo/bin:~/.local/bin:$PATH
+fish_add_path ~/.cargo/bin ~/.local/bin
 set -x NEMU_HOME /home/ethan/ics2022/nemu
 set -x AM_HOME /home/ethan/ics2022/abstract-machine
 set -x NAVY_HOME /home/ethan/ics2022/navy-apps
