@@ -1,6 +1,6 @@
 local opts = {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "cpp", "rust", "javascript", "python", "go", "lua", "vim", "vimdoc", "query" },
+  ensure_installed = { "c", "cpp", "rust", "javascript", "python", "go", "lua", "vim", "vimdoc", "query", "html", "css" },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
   -- Automatically install missing parsers when entering buffer

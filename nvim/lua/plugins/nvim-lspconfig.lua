@@ -28,19 +28,7 @@ local config = function()
 	-- 		border = "rounded",
 	-- 	},
 	-- })
-	local servers = {
-		"clangd",
-		"rust_analyzer",
-		"gopls",
-		"bashls",
-		"lua_ls",
-		"yamlls",
-		"pyright",
-		"html",
-		"cssls",
-		"cssmodules_ls",
-		"dockerls",
-	}
+	local servers = require("plugins.lsp_settings.serverlist")
 	-- require("mason-lspconfig").setup({
 	-- 	ensure_installed = servers,
 	-- 	automatic_installation = true,
@@ -63,7 +51,8 @@ end
 return {
 	"neovim/nvim-lspconfig",
 	-- lazy = false,
-	dependencies = { "williamboman/mason.nvim" },
-	event = { "VimEnter", "BufReadPost", "BufNewFile" },
+	-- dependencies = { "williamboman/mason.nvim" },
+	-- event = { "VimEnter", "BufReadPost", "BufNewFile" },
+	event = "VeryLazy",
 	config = config,
 }

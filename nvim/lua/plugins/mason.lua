@@ -6,7 +6,11 @@ local opts = {
 
 return {
   "williamboman/mason.nvim",
+  lazy = false,
   -- event = "VeryLazy",
+	-- event = { "VimEnter", "BufReadPost", "BufNewFile" },
+  -- dependencies = { "williamboman/mason-lspconfig.nvim" },
+  -- dependencies = { "neovim/nvim-lspconfig" },
   -- cmd = { "Mason", "MasonInstall", "MasonUninstall" },
   -- keys = {
   --   { "<leader>mh", "<cmd>Mason<cr>", desc = "Home" },

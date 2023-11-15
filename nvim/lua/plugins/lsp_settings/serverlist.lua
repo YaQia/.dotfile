@@ -9,4 +9,5 @@ return {
   "html",
   "cssls",
   "cssmodules_ls",
+  "dockerls",
 }
