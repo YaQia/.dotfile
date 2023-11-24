@@ -2309,6 +2309,6 @@ map kitty_mod+` next_layout
 
 
 # BEGIN_KITTY_THEME
-# Tango Dark
+# Tango Light
 include current-theme.conf
 # END_KITTY_THEME

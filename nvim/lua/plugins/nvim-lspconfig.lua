@@ -52,7 +52,7 @@ return {
 	"neovim/nvim-lspconfig",
 	-- lazy = false,
 	-- dependencies = { "williamboman/mason.nvim" },
-	-- event = { "VimEnter", "BufReadPost", "BufNewFile" },
-	event = "VeryLazy",
+	event = { "VimEnter", "BufReadPost", "BufNewFile" },
+	-- event = "VeryLazy",
 	config = config,
 }
