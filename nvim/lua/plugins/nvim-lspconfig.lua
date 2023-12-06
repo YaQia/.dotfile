@@ -23,18 +23,18 @@ local config = function()
 	--   end
 	-- end
 
+	local servers = require("plugins.lsp_settings.serverlist")
+	require("lspconfig.ui.windows").default_options.border = "rounded"
+	local lspconfig = require("lspconfig")
 	-- require("mason").setup({
 	-- 	ui = {
 	-- 		border = "rounded",
 	-- 	},
 	-- })
-	local servers = require("plugins.lsp_settings.serverlist")
 	-- require("mason-lspconfig").setup({
 	-- 	ensure_installed = servers,
 	-- 	automatic_installation = true,
 	-- })
-	require("lspconfig.ui.windows").default_options.border = "rounded"
-	local lspconfig = require("lspconfig")
 
 	local opts
 	for _, server in pairs(servers) do
@@ -51,8 +51,9 @@ end
 return {
 	"neovim/nvim-lspconfig",
 	-- lazy = false,
-	-- dependencies = { "williamboman/mason.nvim" },
-	event = { "VimEnter", "BufReadPost", "BufNewFile" },
+	-- dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
+	event = { "VimEnter", "BufReadPre", "BufNewFile" },
+  -- event = { "CursorHold", "CursorHoldI" },
 	-- event = "VeryLazy",
 	config = config,
 }

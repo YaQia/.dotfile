@@ -160,6 +160,18 @@ local config = function()
         "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
         "Workspace Symbols",
       },
+      D = {
+        "<cmd>LspStop<cr>",
+        "Disable",
+      },
+      e = {
+        "<cmd>LspStart<cr>",
+        "Enable",
+      },
+      E = {
+        "<cmd>LspRestart<cr>",
+        "Disable & Enable",
+      }
     },
     s = {
       name = "Search",

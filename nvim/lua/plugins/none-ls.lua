@@ -22,7 +22,9 @@ end
 -- new version of null-ls
 return {
   "nvimtools/none-ls.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+	-- event = { "VimEnter", "BufReadPost", "BufNewFile" },
+  event = { "CursorHold", "CursorHoldI" },
   dependencies = { "nvim-lua/plenary.nvim" },
   config = config,
 }

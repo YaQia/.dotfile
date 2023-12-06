@@ -15,6 +15,7 @@ end
 
 return {
   "RRethy/vim-illuminate",
-  event = "VeryLazy",
+  event = { "CursorHold", "CursorHoldI" },
+  -- dependencies = { "neovim/nvim-lspconfig" },
   config = config,
 }

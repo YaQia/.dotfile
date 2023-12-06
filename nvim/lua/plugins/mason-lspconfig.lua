@@ -5,7 +5,8 @@ local opts = {
 
 return {
   "williamboman/mason-lspconfig.nvim",
-  -- event = "VeryLazy",
+  -- event = "BufReadPost",
+  dependencies = { "williamboman/mason.nvim" },
   -- dependencies = { "neovim/nvim-lspconfig" },
   cmd = { "Mason", "MasonInstall", "MasonUninstall", "LspInstall" },
   -- keys = {

@@ -60,10 +60,10 @@ keymap("v", "p", '"_dP')
 keymap("x", "<A-j>", ":m '>+1<cr>gv=gv", opt)
 keymap("x", "<A-k>", ":m '<-2<cr>gv=gv", opt)
 
-keymap("n", "<C-e>", function()
-	local result = vim.treesitter.get_captures_at_cursor(0)
-	print(vim.inspect(result))
-end, { noremap = true, silent = false })
+-- keymap("n", "<C-e>", function()
+-- 	local result = vim.treesitter.get_captures_at_cursor(0)
+-- 	print(vim.inspect(result))
+-- end, { noremap = true, silent = false })
 
 -- lsp keymaps
 vim.api.nvim_create_autocmd("LspAttach", {
