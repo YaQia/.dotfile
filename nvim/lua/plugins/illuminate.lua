@@ -2,7 +2,7 @@ local config = function()
   require("illuminate").configure({
     providers = {
       "lsp",
-      "treesitter",
+      -- "treesitter",
     },
     filetypes_denylist = {
       "dirvish",
@@ -16,6 +16,7 @@ end
 return {
   "RRethy/vim-illuminate",
   event = { "CursorHold", "CursorHoldI" },
+  -- event = { "LspAttach" },
   -- dependencies = { "neovim/nvim-lspconfig" },
   config = config,
 }

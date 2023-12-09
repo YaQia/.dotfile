@@ -10,4 +10,5 @@ return {
   "cssls",
   "cssmodules_ls",
   "dockerls",
+  "marksman",
 }

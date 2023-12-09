@@ -82,7 +82,7 @@ local config = function()
     -- },
   })
   local opts = {
-    mode = "n", -- NORMAL mode
+    mode = "n",   -- NORMAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
     silent = true, -- use `silent` when creating keymaps
@@ -93,6 +93,7 @@ local config = function()
     ["/"] = { "<cmd>lua require('Comment.api').toggle.linewise()<cr>", "Comment toggle linewise" },
     ["?"] = { "<cmd>lua require('Comment.api').toggle.blockwise()<cr>", "Comment toggle blockwise" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    -- ["e"] = { "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<cr>", "MiniFiles" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>confirm q<cr>", "Quit" },
     ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
@@ -132,46 +133,51 @@ local config = function()
 
     l = {
       name = "LSP",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+      a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
       d = {
         "<cmd>Telescope diagnostics bufnr=0<cr>",
         "Document Diagnostics",
       },
       w = {
-        "<cmd>Telescope diagnostics<cr>",
+        "<cmd>Lspsaga show_workspace_diagnostics<cr>",
         "Workspace Diagnostics",
       },
       i = { "<cmd>LspInfo<cr>", "Info" },
       I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
       j = {
-        "<cmd>lua vim.diagnostic.goto_next()<CR>",
+        "<cmd>Lspsaga diagnostic_jump_next<CR>",
         "Next Diagnostic",
       },
       k = {
-        "<cmd>lua vim.diagnostic.goto_prev()<cr>",
+        "<cmd>Lspsaga diagnostic_jump_prev<cr>",
         "Prev Diagnostic",
       },
       f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
       l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
       q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+      -- r = { "<cmd>Lspsaga rename<cr>", "Rename" },
       r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
       s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
       S = {
         "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
         "Workspace Symbols",
       },
-      D = {
-        "<cmd>LspStop<cr>",
-        "Disable",
+      -- D = {
+      --   "<cmd>LspStop<cr>",
+      --   "Disable",
+      -- },
+      -- e = {
+      --   "<cmd>LspStart<cr>",
+      --   "Enable",
+      -- },
+      -- E = {
+      --   "<cmd>LspRestart<cr>",
+      --   "Re-enable",
+      -- },
+      o = {
+        "<cmd>Lspsaga outline<cr>",
+        "Outline",
       },
-      e = {
-        "<cmd>LspStart<cr>",
-        "Enable",
-      },
-      E = {
-        "<cmd>LspRestart<cr>",
-        "Disable & Enable",
-      }
     },
     s = {
       name = "Search",
@@ -194,10 +200,10 @@ local config = function()
       name = "Mason",
       h = { "<cmd>Mason<cr>", "Home" },
       u = { "<cmd>MasonUninstallAll<cr>", "Uninstall All" },
-    }
+    },
   }
   local vopts = {
-    mode = "v", -- VISUAL mode
+    mode = "v",   -- VISUAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
     silent = true, -- use `silent` when creating keymaps
@@ -215,7 +221,7 @@ local config = function()
     },
     l = {
       name = "LSP",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+      a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
     },
   }
   wk.register(keymaps, opts)

@@ -11,9 +11,9 @@ keymap("i", "<A-j>", "<esc><Cmd>m .+1<cr>==i", opt)
 keymap("i", "<A-k>", "<esc><Cmd>m .-2<cr>==i", opt)
 
 -- Normal Mode --
-keymap("n", "<leader>e", vim.cmd.Ex)
-keymap("n", "<leader>w", "<Cmd>w<cr>", opt)
-keymap("n", "<leader>h", "<Cmd>noh<cr>", opt)
+-- keymap("n", "<leader>e", vim.cmd.Ex)
+-- keymap("n", "<leader>w", "<Cmd>w<cr>", opt)
+-- keymap("n", "<leader>h", "<Cmd>noh<cr>", opt)
 
 -- text movement
 keymap("n", "H", "^")

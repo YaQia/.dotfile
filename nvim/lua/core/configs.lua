@@ -79,6 +79,8 @@ local config = {
 
 vim.diagnostic.config(config)
 
+-- lsp settings
+vim.lsp.set_log_level("off")
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",
 })

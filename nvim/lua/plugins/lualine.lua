@@ -148,7 +148,8 @@ local opts = {
 return {
   "nvim-lualine/lualine.nvim",
   -- lazy = false,
-  event = "VimEnter",
+  -- event = "VimEnter",
+  event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons", "YaQia/darkplus.nvim" },
   opts = opts,
 }

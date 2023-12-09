@@ -52,8 +52,8 @@ return {
 	"neovim/nvim-lspconfig",
 	-- lazy = false,
 	-- dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
-	event = { "VimEnter", "BufReadPre", "BufNewFile" },
-  -- event = { "CursorHold", "CursorHoldI" },
-	-- event = "VeryLazy",
+	event = { "VimEnter", "BufReadPost", "BufNewFile" },
+	-- event = { "CursorHold", "CursorHoldI" },
+	-- event = "LspAttach",
 	config = config,
 }
