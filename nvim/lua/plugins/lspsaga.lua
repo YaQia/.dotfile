@@ -40,7 +40,7 @@ local config = function()
 			keymap("n", "gD", "<cmd>Lspsaga finder def<cr>", opts)
 			keymap("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
 			keymap("n", "gr", "<cmd>Lspsaga finder def+ref<cr>", opts)
-			keymap("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
+			-- keymap("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
 			keymap("n", "gi", "<cmd>Lspsaga finder imp<cr>", opts)
 			-- Buffer local mappings.
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
