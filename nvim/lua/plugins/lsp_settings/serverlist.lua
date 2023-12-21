@@ -11,4 +11,6 @@ return {
   "cssmodules_ls",
   "dockerls",
   "marksman",
+  -- "jdtls",
+  -- "drools_lsp",
 }

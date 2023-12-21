@@ -23,6 +23,7 @@ local config = function()
 	--   end
 	-- end
 
+
 	local servers = require("plugins.lsp_settings.serverlist")
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 	local lspconfig = require("lspconfig")
