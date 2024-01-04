@@ -15,6 +15,7 @@ o.conceallevel = 0 -- no hide for ``
 o.fileencoding = "utf-8"
 o.showmode = false -- use plugins to show mode
 o.mouse = "a"
+o.mousemoveevent = true
 o.showtabline = 0 -- 2 means always
 o.showcmd = false
 o.cursorline = true -- highlight the cursor line

@@ -16,10 +16,10 @@ keymap("i", "<A-k>", "<esc><Cmd>m .-2<cr>==i", opt)
 -- keymap("n", "<leader>h", "<Cmd>noh<cr>", opt)
 
 -- text movement
-keymap("n", "H", "^")
-keymap("n", "L", "$")
-keymap("n", "dH", "d^")
-keymap("n", "dL", "d$")
+-- keymap("n", "H", "^")
+-- keymap("n", "L", "$")
+-- keymap("n", "dH", "d^")
+-- keymap("n", "dL", "d$")
 keymap("n", "<A-j>", "<Cmd>m .+1<cr>==", opt)
 keymap("n", "<A-k>", "<Cmd>m .-2<cr>==", opt)
 
@@ -46,8 +46,8 @@ keymap("n", "<leader>c", "<Cmd>bdelete<cr>", opt)
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 
-keymap("v", "H", "^")
-keymap("v", "L", "$")
+-- keymap("v", "H", "^")
+-- keymap("v", "L", "$")
 
 -- move text up and down
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", opt)

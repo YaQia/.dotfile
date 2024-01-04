@@ -15,15 +15,15 @@ else
 	@cat /etc/pacman.conf | grep 'archlinuxcn' > /dev/null || echo -e '[archlinuxcn]\nInclude = /etc/pacman.d/cn_mirrorlist' | sudo tee -a /etc/pacman.conf  > /dev/null
 	@# install necessary packages and remove not needed packages
 	@sudo pacman -Syu
-	@sudo pacman -S archlinuxcn-keyring linux-headers neovim xsel kitty \
+	@sudo pacman -S archlinuxcn-keyring neovim xsel kitty \
 		gnome-shell-extensions gnome-tweaks \
 		yay fish \
-		vlc gthumb v4l2loopback-dkms gst-plugin-pipewire obs-studio \
+		vlc gthumb gst-plugin-pipewire obs-studio \
 		ibus ibus-libpinyin \
 		cmake clang rustup go ripgrep bear \
 		ttf-firacode-nerd noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming
 	@sudo pacman -Rcs gnome-music gnome-photos epiphany totem
-	@yay -S linuxqq wemeet-bin qt5-wayland wechat-uos v2raya ttf-symbola bibata-cursor-theme adw-gtk3-git 
+	@yay -S linuxqq wemeet-bin wechat-uos v2raya ttf-symbola bibata-cursor-theme adw-gtk3-git 
 	@rustup install rust rust-src
 endif
 
