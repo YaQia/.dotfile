@@ -1,13 +1,35 @@
 local opts = {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "cpp", "rust", "javascript", "python", "go", "lua", "vim", "vimdoc", "query", "html", "css" },
+  ensure_installed = {
+    "c",
+    "cpp",
+    "rust",
+    "java",
+    "javascript",
+    "python",
+    "go",
+    "lua",
+    "vim",
+    "vimdoc",
+    "query",
+    "html",
+    "css",
+    "bash",
+    "fish",
+    "doxygen",
+    "comment",
+    "luadoc",
+    "regex",
+    "yaml",
+    "toml",
+  },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
   -- List of parsers to ignore installing (or "all")
-  ignore_install = {},
+  ignore_install = { "latex" },
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
   highlight = {
@@ -53,9 +75,9 @@ return {
   "nvim-treesitter/nvim-treesitter",
   -- dependencies = "nvim-treesitter/playground",
   build = ":TSUpdate",
-	event = "VeryLazy",
-  config = function ()
+  event = "VeryLazy",
+  config = function()
     local configs = require("nvim-treesitter.configs")
     configs.setup(opts)
-  end
+  end,
 }

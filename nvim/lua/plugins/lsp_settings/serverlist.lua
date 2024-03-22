@@ -11,6 +11,11 @@ return {
   "cssmodules_ls",
   "dockerls",
   "marksman",
+  "texlab",
+  "tsserver",
+  "eslint",
+  "jsonls",
+  "svelte",
   -- "jdtls",
   -- "drools_lsp",
 }

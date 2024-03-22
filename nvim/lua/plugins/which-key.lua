@@ -1,3 +1,22 @@
+_G.whichkeyTex = function()
+  local wk = require("which-key")
+  local opts = {
+    mode = "n",   -- NORMAL mode
+    prefix = "<leader>",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+  }
+  local keymaps = {
+    L = {
+      name = "LaTeX",
+      b = { "<cmd>TexlabBuild<cr>", "Build" },
+      p = { "<cmd>TexlabForward<cr>", "Preview" },
+    },
+  }
+  wk.register(keymaps, opts)
+end
+
 local config = function()
   local wk = require("which-key")
   -- all options are listed here, some may be useful
@@ -226,11 +245,15 @@ local config = function()
   }
   wk.register(keymaps, opts)
   wk.register(vkeymaps, vopts)
+  vim.cmd([[
+  autocmd FileType tex lua whichkeyTex()
+  ]])
 end
 
 return {
   "folke/which-key.nvim",
-  event = "VeryLazy",
+  lazy = false,
+  -- event = "VimEnter",
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 500

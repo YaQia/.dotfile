@@ -5,6 +5,7 @@ vim.g.node_host_prog = '/home/ethan/.npm-global/bin/neovim-node-host'
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.tex_flavor = 'latex'
 
 local o = vim.opt
 

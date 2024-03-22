@@ -16,6 +16,7 @@ local opts = {
 
 return {
   "nmac427/guess-indent.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  lazy = false,
   opts = opts,
 }

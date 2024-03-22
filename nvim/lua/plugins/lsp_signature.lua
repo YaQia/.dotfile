@@ -5,6 +5,8 @@ local opts = {
 
 return {
   "ray-x/lsp_signature.nvim",
-  event = "VeryLazy",
+  event = { "VimEnter", "BufReadPost", "BufNewFile" },
+  -- event = "VeryLazy",
+  dependencies = { "neovim/nvim-lspconfig" },
   opts = opts,
 }

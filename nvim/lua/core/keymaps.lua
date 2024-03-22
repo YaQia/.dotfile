@@ -4,6 +4,7 @@
 local keymap = vim.keymap.set
 local opt = { silent = true }
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Insert Mode --
 -- text movement
@@ -16,10 +17,10 @@ keymap("i", "<A-k>", "<esc><Cmd>m .-2<cr>==i", opt)
 -- keymap("n", "<leader>h", "<Cmd>noh<cr>", opt)
 
 -- text movement
--- keymap("n", "H", "^")
--- keymap("n", "L", "$")
--- keymap("n", "dH", "d^")
--- keymap("n", "dL", "d$")
+keymap("n", "H", "^")
+keymap("n", "L", "$")
+keymap("n", "dH", "d^")
+keymap("n", "dL", "d$")
 keymap("n", "<A-j>", "<Cmd>m .+1<cr>==", opt)
 keymap("n", "<A-k>", "<Cmd>m .-2<cr>==", opt)
 

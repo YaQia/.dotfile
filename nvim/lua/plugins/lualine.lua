@@ -150,6 +150,6 @@ return {
   -- lazy = false,
   -- event = "VimEnter",
   event = "VeryLazy",
-  dependencies = { "nvim-tree/nvim-web-devicons", "YaQia/darkplus.nvim" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = opts,
 }
