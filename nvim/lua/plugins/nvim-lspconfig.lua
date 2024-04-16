@@ -37,6 +37,11 @@ local config = function()
 	-- 	automatic_installation = true,
 	-- })
 
+	-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+	-- capabilities.textDocument.foldingRange = {
+	-- 	dynamicRegistration = false,
+	-- 	lineFoldingOnly = true,
+	-- }
 	local opts
 	for _, server in pairs(servers) do
 		opts = {}

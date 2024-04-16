@@ -16,6 +16,7 @@ return {
   "eslint",
   "jsonls",
   "svelte",
+  "solargraph",
   -- "jdtls",
   -- "drools_lsp",
 }

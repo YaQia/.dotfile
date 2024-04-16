@@ -8,6 +8,7 @@ local opts = {
     "javascript",
     "python",
     "go",
+    "gomod",
     "lua",
     "vim",
     "vimdoc",
@@ -75,6 +76,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   -- dependencies = "nvim-treesitter/playground",
   build = ":TSUpdate",
+  -- lazy = false,
   event = "VeryLazy",
   config = function()
     local configs = require("nvim-treesitter.configs")

@@ -11,7 +11,7 @@ return {
   -- event = { "CursorHold", "CursorHoldI" },
   -- dependencies = { "williamboman/mason-lspconfig.nvim" },
   -- dependencies = { "neovim/nvim-lspconfig" },
-  -- cmd = { "Mason", "MasonInstall", "MasonUninstall" },
+  cmd = { "Mason", "MasonInstall", "MasonUninstall" },
   -- keys = {
   --   { "<leader>mh", "<cmd>Mason<cr>", desc = "Home" },
   --   { "<leader>mu", "<cmd>MasonUninstallAll", desc = "Uninstall All"}
