@@ -7,7 +7,7 @@ if status is-interactive
 end
 
 #This is conflicted with remote-nvim plugin
-# alias ssh="kitten ssh"
+alias ssh="kitten ssh"
 
 # To use fish's autoloading feature, kitty prepends the vendored integration script directory to XDG_DATA_DIRS.
 # The original paths needs to be restored here to not affect other programs.

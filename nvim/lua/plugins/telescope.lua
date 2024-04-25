@@ -23,7 +23,7 @@ return {
     "debugloop/telescope-undo.nvim",
   },
   event = "VeryLazy",
-  cmd = "Telescope",
-  keys = "<leader>s",
+  -- cmd = "Telescope",
+  -- keys = "<leader>s",
   config = config,
 }

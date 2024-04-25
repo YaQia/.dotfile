@@ -209,6 +209,7 @@ local config = function()
 			u = { "<cmd>Telescope undo<cr>", "Undo History" },
 			c = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
 			h = { "<cmd>Telescope help_tags<cr>", "Help" },
+			m = { "<cmd>Telescope marks<cr>", "Marks" },
 			M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 			r = { "<cmd>Telescope oldfiles<cr>", "Recently Opened Files" },
 			R = { "<cmd>Telescope registers<cr>", "Registers" },
@@ -252,8 +253,8 @@ end
 
 return {
 	"folke/which-key.nvim",
-	lazy = false,
-	-- event = "VimEnter",
+	-- lazy = false,
+	event = "VeryLazy",
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 500
