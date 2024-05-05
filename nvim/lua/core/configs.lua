@@ -21,6 +21,9 @@ o.showtabline = 0 -- 2 means always
 o.showcmd = false
 o.cursorline = true -- highlight the cursor line
 o.number = true
+o.relativenumber = true
+-- o.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%r│%T"
+
 o.tabstop = 2
 o.shiftwidth = 2
 o.expandtab = true

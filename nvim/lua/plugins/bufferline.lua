@@ -20,8 +20,20 @@ local opts = {
 		-- 	icon = '▎',
 		-- 	style = "underline",
 		-- },
+		numbers = function (opts)
+			return string.format('%s', opts.raise(opts.ordinal))
+		end,
 	},
 }
+for i = 1, 9 do
+	vim.keymap.set(
+		"n",
+		"<A-" .. tostring(i) .. ">",
+		"<Cmd>BufferLineGoToBuffer " .. tostring(i) .. "<cr>",
+		{ silent = true }
+	)
+end
+vim.keymap.set("n", "<A-0>", "<Cmd>BufferLineGoToBuffer -1<cr>", { silent = true })
 vim.keymap.set("n", "<A-l>", "<Cmd>BufferLineCycleNext<cr>", { silent = true })
 vim.keymap.set("n", "<A-h>", "<Cmd>BufferLineCyclePrev<cr>", { silent = true })
 vim.keymap.set("n", "<A-L>", "<Cmd>BufferLineMoveNext<cr>", { silent = true })
