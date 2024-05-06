@@ -23,7 +23,7 @@ o.cursorline = true -- highlight the cursor line
 o.number = true
 o.relativenumber = true
 -- o.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%r│%T"
-
+o.laststatus = 3 -- means statuscolumn will only on the bottom
 o.tabstop = 2
 o.shiftwidth = 2
 o.expandtab = true
