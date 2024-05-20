@@ -17,12 +17,10 @@ local opts = {
 			reveal = { "close" },
 		},
 		-- indicator = {
-		-- 	icon = '▎',
-		-- 	style = "underline",
+			-- icon = '▎',
+			-- style = "underline",
 		-- },
-		numbers = function (opts)
-			return string.format('%s', opts.raise(opts.ordinal))
-		end,
+		-- numbers = "ordinal",
 	},
 }
 for i = 1, 9 do
@@ -43,7 +41,8 @@ vim.keymap.set("n", "<A-H>", "<Cmd>BufferLineMovePrev<cr>", { silent = true })
 return {
 	"akinsho/bufferline.nvim",
 	event = "BufAdd",
-	version = "*",
+	-- version = "*",
+	branch = "main",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = opts,
 }

@@ -6,6 +6,7 @@ local opts = {
     priority = 11,
   },
   scope = {
+    enabled = true,
     show_start = false,
     show_end = false,
   },
@@ -16,4 +17,7 @@ return {
   event = "VeryLazy",
   main = "ibl",
   opts = opts,
+  -- config = function ()
+  --   require("ibl").setup()
+  -- end
 }

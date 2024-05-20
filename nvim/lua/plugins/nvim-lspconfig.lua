@@ -23,7 +23,6 @@ local config = function()
 	--   end
 	-- end
 
-
 	local servers = require("plugins.lsp_settings.serverlist")
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 	local lspconfig = require("lspconfig")
@@ -44,7 +43,14 @@ local config = function()
 	-- }
 	local opts
 	for _, server in pairs(servers) do
-		opts = {}
+		opts = {
+			on_attach = function(client, bufnr)
+				require("lsp_signature").on_attach({
+					hint_enable = true, -- virtual hint enable
+					hint_prefix = "• ",
+				}, bufnr)
+			end,
+		}
 		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", conf_opts, opts)
