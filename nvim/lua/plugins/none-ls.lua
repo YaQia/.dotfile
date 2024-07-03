@@ -13,6 +13,7 @@ local config = function()
       -- formatting.rustfmt,
       formatting.cbfmt,
       formatting.prettier,
+      formatting.shfmt,
       -- formatting.latexindent,
       -- diagnostics.golangci_lint,
       -- diagnostics.cpplint.with({ extra_args = {""} }),

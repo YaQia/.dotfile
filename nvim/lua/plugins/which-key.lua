@@ -1,22 +1,3 @@
-_G.whichkeyTex = function()
-	local wk = require("which-key")
-	local opts = {
-		mode = "n", -- NORMAL mode
-		prefix = "<leader>",
-		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-		silent = true, -- use `silent` when creating keymaps
-		noremap = true, -- use `noremap` when creating keymaps
-	}
-	local keymaps = {
-		L = {
-			name = "LaTeX",
-			b = { "<cmd>TexlabBuild<cr>", "Build" },
-			p = { "<cmd>TexlabForward<cr>", "Preview" },
-		},
-	}
-	wk.register(keymaps, opts)
-end
-
 local config = function()
 	local wk = require("which-key")
 	-- all options are listed here, some may be useful
@@ -202,7 +183,7 @@ local config = function()
 			name = "Search",
 			f = { "<cmd>Telescope find_files<cr>", "Files" },
 			b = {
-				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = true})<cr>",
 				"Buffers",
 			},
 			t = { "<cmd>Telescope live_grep<cr>", "Text" },
@@ -221,6 +202,11 @@ local config = function()
 			h = { "<cmd>Mason<cr>", "Home" },
 			u = { "<cmd>MasonUninstallAll<cr>", "Uninstall All" },
 		},
+		L = {
+			name = "LaTeX",
+			b = { "<cmd>TexlabBuild<cr>", "Build" },
+			p = { "<cmd>TexlabForward<cr>", "Preview" },
+		}
 	}
 	local vopts = {
 		mode = "v", -- VISUAL mode
@@ -246,9 +232,6 @@ local config = function()
 	}
 	wk.register(keymaps, opts)
 	wk.register(vkeymaps, vopts)
-	vim.cmd([[
-  autocmd FileType tex lua whichkeyTex()
-  ]])
 end
 
 return {

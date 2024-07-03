@@ -17,25 +17,12 @@ local opts = {
 			reveal = { "close" },
 		},
 		-- indicator = {
-			-- icon = '▎',
-			-- style = "underline",
+		-- icon = '▎',
+		-- style = "underline",
 		-- },
 		-- numbers = "ordinal",
 	},
 }
-for i = 1, 9 do
-	vim.keymap.set(
-		"n",
-		"<A-" .. tostring(i) .. ">",
-		"<Cmd>BufferLineGoToBuffer " .. tostring(i) .. "<cr>",
-		{ silent = true }
-	)
-end
-vim.keymap.set("n", "<A-0>", "<Cmd>BufferLineGoToBuffer -1<cr>", { silent = true })
-vim.keymap.set("n", "<A-l>", "<Cmd>BufferLineCycleNext<cr>", { silent = true })
-vim.keymap.set("n", "<A-h>", "<Cmd>BufferLineCyclePrev<cr>", { silent = true })
-vim.keymap.set("n", "<A-L>", "<Cmd>BufferLineMoveNext<cr>", { silent = true })
-vim.keymap.set("n", "<A-H>", "<Cmd>BufferLineMovePrev<cr>", { silent = true })
 
 -- bufferline
 return {
@@ -44,5 +31,20 @@ return {
 	-- version = "*",
 	branch = "main",
 	dependencies = "nvim-tree/nvim-web-devicons",
-	opts = opts,
+	config = function()
+		require("bufferline").setup(opts)
+		for i = 1, 9 do
+			vim.keymap.set(
+			"n",
+			"<A-" .. tostring(i) .. ">",
+			"<Cmd>BufferLineGoToBuffer " .. tostring(i) .. "<cr>",
+			{ silent = true }
+			)
+		end
+		vim.keymap.set("n", "<A-0>", "<Cmd>BufferLineGoToBuffer -1<cr>", { silent = true })
+		vim.keymap.set("n", "<A-l>", "<Cmd>BufferLineCycleNext<cr>", { silent = true })
+		vim.keymap.set("n", "<A-h>", "<Cmd>BufferLineCyclePrev<cr>", { silent = true })
+		vim.keymap.set("n", "<A-L>", "<Cmd>BufferLineMoveNext<cr>", { silent = true })
+		vim.keymap.set("n", "<A-H>", "<Cmd>BufferLineMovePrev<cr>", { silent = true })
+	end,
 }
