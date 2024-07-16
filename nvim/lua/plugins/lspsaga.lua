@@ -39,8 +39,8 @@ local config = function()
 			local opts = { buffer = ev.buf }
 			keymap("n", "gD", "<cmd>Lspsaga finder def<cr>", opts)
 			-- This conflicts with nvim-ufo --
-			-- keymap("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
-			keymap("n", "gd", vim.lsp.buf.definition, opts)
+			keymap("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
+			-- keymap("n", "gd", vim.lsp.buf.definition, opts)
 			keymap("n", "gr", "<cmd>Lspsaga finder def+ref<cr>", opts)
 			keymap("n", "K", vim.lsp.buf.hover, opts)
 			keymap("n", "gi", "<cmd>Lspsaga finder imp<cr>", opts)

@@ -17,6 +17,7 @@ return {
   "jsonls",
   "svelte",
   "solargraph",
+  "volar",
   -- "jdtls",
   -- "drools_lsp",
 }

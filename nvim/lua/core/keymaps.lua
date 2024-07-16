@@ -43,6 +43,9 @@ keymap("n", "<A-h>", "<Cmd>bprev<cr>", opt)
 keymap("n", "<leader>q", "<cmd>confirm q<cr>", opt)
 keymap("n", "<leader>c", "<Cmd>bdelete<cr>", opt)
 
+-- disable highlight
+keymap("n", "<Esc>", "<cmd>nohl<cr>", opt)
+
 -- Visual Mode --
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
