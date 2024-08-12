@@ -1,4 +1,4 @@
-fish_add_path ~/.cargo/bin ~/.local/bin /usr/share/bcc/tools /home/ethan/.local/share/gem/ruby/3.0.0/bin /opt/riscv/bin
+fish_add_path ~/.cargo/bin ~/.local/bin /usr/share/bcc/tools 
 set -x DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 # set -x LANG zh_CN.UTF-8
 # set -x LANGUAGE zh_CN:en_US
