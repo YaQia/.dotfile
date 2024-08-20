@@ -71,7 +71,7 @@ local location = {
 -- cool function for progress
 
 local spaces = function()
-	return "󰌒 " .. vim.api.nvim_get_option_value(0, "tabstop")
+	return "󰌒 " .. vim.api.nvim_get_option_value("tabstop")
 end
 
 -- theme

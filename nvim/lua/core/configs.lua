@@ -24,8 +24,8 @@ o.number = true
 o.relativenumber = true
 -- o.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%r│%T"
 o.laststatus = 3 -- means statuscolumn will only on the bottom
-o.tabstop = 2
-o.shiftwidth = 2
+o.tabstop = 4
+o.shiftwidth = 4
 o.expandtab = true
 o.smartindent = true
 o.splitbelow = true -- force window to be splited into the bottom
