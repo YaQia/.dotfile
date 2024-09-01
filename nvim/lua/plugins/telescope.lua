@@ -1,8 +1,81 @@
 local config = function()
 	require("telescope").setup({
+		defaults = {
+			initial_mode = "insert",
+		},
 		pickers = {
 			find_files = {
 				theme = "dropdown",
+			},
+			lsp_references = {
+				theme = "cursor",
+				initial_mode = "normal",
+				path_display = {
+					shorten = { len = 1, exclude = { -1, -2 } },
+				},
+				layout_config = {
+					cursor = {
+						height = 0.5,
+						preview_cutoff = 120,
+						width = 0.8,
+					},
+				},
+			},
+			lsp_definitions = {
+				theme = "cursor",
+				initial_mode = "normal",
+				path_display = {
+					shorten = { len = 1, exclude = { -1, -2 } },
+				},
+				layout_config = {
+					cursor = {
+						height = 0.5,
+						preview_cutoff = 120,
+						width = 0.8,
+					},
+				},
+			},
+			lsp_implementations = {
+				theme = "cursor",
+				initial_mode = "normal",
+				path_display = {
+					shorten = { len = 1, exclude = { -1, -2 } },
+				},
+				layout_config = {
+					cursor = {
+						height = 0.5,
+						preview_cutoff = 120,
+						width = 0.8,
+					},
+				},
+			},
+			lsp_incoming_calls = {
+				theme = "cursor",
+				initial_mode = "normal",
+				path_display = {
+					shorten = { len = 1, exclude = { -1, -2 } },
+				},
+				layout_config = {
+					cursor = {
+						height = 0.5,
+						preview_cutoff = 120,
+						width = 0.8,
+					},
+				},
+			},
+			lsp_outcoming_calls = {
+				theme = "cursor",
+				initial_mode = "normal",
+				path_display = {
+					shorten = { len = 1, exclude = { -1, -2 } },
+				},
+				layout_config = {
+					cursor = {
+						height = 0.5,
+						preview_cutoff = 120,
+						width = 0.8,
+					},
+				},
 			},
 		},
 		extensions = {

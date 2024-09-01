@@ -59,6 +59,7 @@ local config = function()
 			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = true})<cr>",
 			desc = "Buffers",
 		},
+		{ "<leader>sr", "<cmd>Telescope resume<cr>", desc = "Resume" },
 		{ "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Text" },
 		{ "<leader>su", "<cmd>Telescope undo<cr>", desc = "Undo History" },
 		{ "<leader>sc", "<cmd>Telescope colorscheme<cr>", desc = "Colorschemes" },
@@ -66,7 +67,7 @@ local config = function()
 		{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
 		{ "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Marks" },
 		{ "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
-		{ "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Recently Opened Files" },
+		{ "<leader>so", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
 		{ "<leader>sR", "<cmd>Telescope registers<cr>", desc = "Registers" },
 		{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
 		-- LaTeX group

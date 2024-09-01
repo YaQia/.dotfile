@@ -18,6 +18,7 @@ return {
   "svelte",
   "solargraph",
   "volar",
+  "cmake",
   -- "jdtls",
   -- "drools_lsp",
 }
