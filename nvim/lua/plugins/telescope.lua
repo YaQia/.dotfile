@@ -15,7 +15,7 @@ local config = function()
 				},
 				layout_config = {
 					cursor = {
-						height = 0.5,
+						height = 0.4,
 						preview_cutoff = 120,
 						width = 0.8,
 					},
@@ -29,7 +29,7 @@ local config = function()
 				},
 				layout_config = {
 					cursor = {
-						height = 0.5,
+						height = 0.4,
 						preview_cutoff = 120,
 						width = 0.8,
 					},
@@ -43,7 +43,7 @@ local config = function()
 				},
 				layout_config = {
 					cursor = {
-						height = 0.5,
+						height = 0.4,
 						preview_cutoff = 120,
 						width = 0.8,
 					},
@@ -57,7 +57,7 @@ local config = function()
 				},
 				layout_config = {
 					cursor = {
-						height = 0.5,
+						height = 0.4,
 						preview_cutoff = 120,
 						width = 0.8,
 					},
@@ -71,7 +71,7 @@ local config = function()
 				},
 				layout_config = {
 					cursor = {
-						height = 0.5,
+						height = 0.4,
 						preview_cutoff = 120,
 						width = 0.8,
 					},
