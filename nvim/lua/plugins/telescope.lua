@@ -20,6 +20,7 @@ local config = function()
 						width = 0.8,
 					},
 				},
+				dynamic_preview_title = true,
 			},
 			lsp_definitions = {
 				theme = "cursor",
@@ -34,6 +35,7 @@ local config = function()
 						width = 0.8,
 					},
 				},
+				dynamic_preview_title = true,
 			},
 			lsp_implementations = {
 				theme = "cursor",
@@ -48,6 +50,7 @@ local config = function()
 						width = 0.8,
 					},
 				},
+				dynamic_preview_title = true,
 			},
 			lsp_incoming_calls = {
 				theme = "cursor",
@@ -62,6 +65,7 @@ local config = function()
 						width = 0.8,
 					},
 				},
+				dynamic_preview_title = true,
 			},
 			lsp_outcoming_calls = {
 				theme = "cursor",
@@ -76,6 +80,7 @@ local config = function()
 						width = 0.8,
 					},
 				},
+				dynamic_preview_title = true,
 			},
 		},
 		extensions = {
