@@ -12,7 +12,7 @@ return {
   "dockerls",
   "marksman",
   "texlab",
-  "tsserver",
+  "ts_ls",
   "eslint",
   "jsonls",
   "svelte",
