@@ -90,6 +90,9 @@ local config = function()
 		icons = {
 			rules = false,
 		},
+		win = {
+			no_overlap = false,
+		},
 	})
 end
 
