@@ -3,7 +3,7 @@ local config = function()
 	wk.add({
 		{
 			mode = { "v" },
-			{ "<leader>l", group = "LSP" },
+			{ "leader>l", group = "LSP" },
 			{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 		},
 		-- default mode is Normal, no need to define
@@ -81,7 +81,14 @@ local config = function()
 	})
 	wk.setup({
 		preset = "modern",
-		delay = 500,
+		delay = function (ctx)
+			-- other mode
+			if ctx.mode ~= "n" then
+				return 2000
+			end
+			-- normal mode
+			return 500
+		end,
 		-- layout = {
 		-- 	width = { min = 20 }, -- min and max width of the columns
 		-- 	spacing = 3, -- spacing between columns
