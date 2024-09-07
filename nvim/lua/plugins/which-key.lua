@@ -4,7 +4,7 @@ local config = function()
 		{
 			mode = { "v" },
 			{ "<leader>l", group = "LSP" },
-			{ "<leader>la", "<cmd>Lspsaga code_action<cr>", desc = "Code Action" },
+			{ "<leader>la", require("actions-preview").code_actions, desc = "Code Action" },
 		},
 		-- default mode is Normal, no need to define
 		{ "<leader>;", "<cmd>Alpha<cr>", desc = "Dashboard" },
@@ -37,7 +37,7 @@ local config = function()
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
 		-- LSP group
 		{ "<leader>l", group = "LSP" },
-		{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+		{ "<leader>la", require("actions-preview").code_actions, desc = "Code Action" },
 		{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Current File Diagnostics" },
 		{ "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
 		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },

@@ -106,8 +106,9 @@ return {
 		"nvim-lua/plenary.nvim",
 		"debugloop/telescope-undo.nvim",
 	},
+	-- lazy = true,
 	event = "VeryLazy",
-	-- cmd = "Telescope",
+	cmd = "Telescope",
 	-- keys = "<leader>s",
 	config = config,
 }

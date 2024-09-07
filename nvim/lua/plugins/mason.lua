@@ -7,8 +7,9 @@ local opts = {
 return {
   "williamboman/mason.nvim",
   -- lazy = false,
-	event = { "VimEnter", "BufReadPre", "BufNewFile" },
+	event = { "BufReadPre", "BufNewFile" },
   -- event = { "CursorHold", "CursorHoldI" },
+  -- event = "LspAttach",
   -- dependencies = { "williamboman/mason-lspconfig.nvim" },
   -- dependencies = { "neovim/nvim-lspconfig" },
   cmd = { "Mason", "MasonInstall", "MasonUninstall" },
