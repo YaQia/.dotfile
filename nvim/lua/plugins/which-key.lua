@@ -4,7 +4,7 @@ local config = function()
 		{
 			mode = { "v" },
 			{ "<leader>l", group = "LSP" },
-			{ "<leader>la", require("actions-preview").code_actions, desc = "Code Action" },
+			{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 		},
 		-- default mode is Normal, no need to define
 		{ "<leader>;", "<cmd>Alpha<cr>", desc = "Dashboard" },
@@ -37,11 +37,10 @@ local config = function()
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
 		-- LSP group
 		{ "<leader>l", group = "LSP" },
-		{ "<leader>la", require("actions-preview").code_actions, desc = "Code Action" },
+		{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 		{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Current File Diagnostics" },
 		{ "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
 		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
-		{ "<leader>lI", "<cmd>LspInstallInfo<cr>", desc = "Installer Info" },
 		{ "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next Diagnostics" },
 		{ "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Prev Diagnostics" },
 		{ "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format" },
@@ -74,6 +73,11 @@ local config = function()
 		{ "<leader>L", group = "LaTeX" },
 		{ "<leader>Lb", "<cmd>TexlabBuild<cr>", desc = "Build" },
 		{ "<leader>Lp", "<cmd>TexlabForward<cr>", desc = "Preview" },
+		-- remote group
+		{ "<leader>r", group = "Remote" },
+		{ "<leader>rc", require("remote-sshfs.api").connect, desc = "Connect" },
+		{ "<leader>rd", require("remote-sshfs.api").disconnect, desc = "Disconnect" },
+		{ "<leader>re", require("remote-sshfs.api").edit, desc = "Edit" },
 	})
 	wk.setup({
 		preset = "modern",
@@ -92,6 +96,7 @@ end
 return {
 	"folke/which-key.nvim",
 	-- lazy = false,
+	-- keys = {"<leader>", "<cmd>WhichKey <leader><cr>", desc = "Which Key"},
 	event = "VeryLazy",
 	-- init = function()
 	-- 	vim.o.timeout = true

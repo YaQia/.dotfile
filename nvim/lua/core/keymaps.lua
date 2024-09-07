@@ -77,17 +77,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
         local opts = { buffer = ev.buf }
-        keymap("n", "gD", "<cmd>Telescope lsp_definitions<cr><esc>", opts)
+        keymap("n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
         -- This conflicts with nvim-ufo --
         keymap("n", "gd", vim.lsp.buf.definition, opts)
-        keymap("n", "gr", "<cmd>Telescope lsp_references<cr><esc>", opts)
+        keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
         -- keymap("n", "gr", vim.lsp.buf.references, opts)
         keymap("n", "K", vim.lsp.buf.hover, opts)
-        keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr><esc>", opts)
+        keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
         -- goto parent
-        keymap("n", "gI", "<cmd>Telescope lsp_incoming_calls<cr><esc>", opts)
+        keymap("n", "gI", "<cmd>Telescope lsp_incoming_calls<cr>", opts)
         -- goto child
-        keymap("n", "gO", "<cmd>Telescope lsp_outgoing_calls<cr><esc>", opts)
+        keymap("n", "gO", "<cmd>Telescope lsp_outgoing_calls<cr>", opts)
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         -- keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)

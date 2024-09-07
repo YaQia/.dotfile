@@ -13,8 +13,6 @@ local config = function()
 			return { "treesitter", "indent" }
 		end,
 	})
-
-	-- require("ufo").setup()
 end
 
 return {

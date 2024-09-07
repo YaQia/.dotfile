@@ -14,7 +14,8 @@ local opts = {
 
 return {
 	"nosduco/remote-sshfs.nvim",
-	event = "VeryLazy",
+	-- event = "VeryLazy",
+	cmd = { "RemoteSSHFSConnect" },
 	dependencies = { "nvim-telescope/telescope.nvim" },
 	opts = opts,
 }

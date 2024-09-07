@@ -66,7 +66,7 @@ return {
 	-- dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
 	event = { "BufReadPost", "BufNewFile" },
 	-- event = { "CursorHold", "CursorHoldI" },
-	-- event = "LspAttach",
+	-- event = "VeryLazy",
 	cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 	config = config,
 }

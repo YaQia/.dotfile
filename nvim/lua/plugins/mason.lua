@@ -9,7 +9,7 @@ return {
   -- lazy = false,
 	event = { "BufReadPre", "BufNewFile" },
   -- event = { "CursorHold", "CursorHoldI" },
-  -- event = "LspAttach",
+  -- event = "VeryLazy",
   -- dependencies = { "williamboman/mason-lspconfig.nvim" },
   -- dependencies = { "neovim/nvim-lspconfig" },
   cmd = { "Mason", "MasonInstall", "MasonUninstall" },

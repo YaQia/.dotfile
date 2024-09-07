@@ -3,7 +3,24 @@ local opts = {
 		insert_only = false,
 	},
 	select = {
-		enable = false,
+		backend = "builtin",
+		builtin = {
+			relative = "cursor",
+			min_height = 1,
+		}
+		-- telescope = require("telescope.themes").get_cursor({
+		-- 	initial_mode = "normal",
+		-- 	path_display = {
+		-- 		shorten = { len = 1, exclude = { -1, -2 } },
+		-- 	},
+		-- 	layout_config = {
+		-- 		cursor = {
+		-- 			height = 0.4,
+		-- 			preview_cutoff = 100,
+		-- 			width = 0.8,
+		-- 		},
+		-- 	},
+		-- }),
 	},
 }
 

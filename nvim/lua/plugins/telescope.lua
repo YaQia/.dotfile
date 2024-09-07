@@ -11,13 +11,13 @@ local config = function()
 				theme = "cursor",
 				initial_mode = "normal",
 				path_display = {
-					shorten = { len = 1, exclude = { -1, -2 } },
+					shorten = { len = 1, exclude = { -1 } },
 				},
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 120,
-						width = 0.8,
+						preview_cutoff = 80,
+						width = 0.9,
 					},
 				},
 				dynamic_preview_title = true,
@@ -26,13 +26,13 @@ local config = function()
 				theme = "cursor",
 				initial_mode = "normal",
 				path_display = {
-					shorten = { len = 1, exclude = { -1, -2 } },
+					shorten = { len = 1, exclude = { -1 } },
 				},
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 120,
-						width = 0.8,
+						preview_cutoff = 80,
+						width = 0.9,
 					},
 				},
 				dynamic_preview_title = true,
@@ -41,13 +41,13 @@ local config = function()
 				theme = "cursor",
 				initial_mode = "normal",
 				path_display = {
-					shorten = { len = 1, exclude = { -1, -2 } },
+					shorten = { len = 1, exclude = { -1 } },
 				},
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 120,
-						width = 0.8,
+						preview_cutoff = 80,
+						width = 0.9,
 					},
 				},
 				dynamic_preview_title = true,
@@ -56,13 +56,13 @@ local config = function()
 				theme = "cursor",
 				initial_mode = "normal",
 				path_display = {
-					shorten = { len = 1, exclude = { -1, -2 } },
+					shorten = { len = 1, exclude = { -1 } },
 				},
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 120,
-						width = 0.8,
+						preview_cutoff = 80,
+						width = 0.9,
 					},
 				},
 				dynamic_preview_title = true,
@@ -71,13 +71,13 @@ local config = function()
 				theme = "cursor",
 				initial_mode = "normal",
 				path_display = {
-					shorten = { len = 1, exclude = { -1, -2 } },
+					shorten = { len = 1, exclude = { -1 } },
 				},
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 120,
-						width = 0.8,
+						preview_cutoff = 80,
+						width = 0.9,
 					},
 				},
 				dynamic_preview_title = true,
