@@ -11,6 +11,11 @@ local opts = {
 		--   return buffer_a.modified > buffer_b.modified
 		-- end
 
+		groups = {
+			items = {
+				-- require("bufferline.groups").builtin.pinned:with({ icon = " 󰐃" }),
+			},
+		},
 		hover = {
 			enabled = true,
 			delay = 200,
@@ -35,10 +40,10 @@ return {
 		require("bufferline").setup(opts)
 		for i = 1, 9 do
 			vim.keymap.set(
-			"n",
-			"<A-" .. tostring(i) .. ">",
-			"<Cmd>BufferLineGoToBuffer " .. tostring(i) .. "<cr>",
-			{ silent = true }
+				"n",
+				"<A-" .. tostring(i) .. ">",
+				"<Cmd>BufferLineGoToBuffer " .. tostring(i) .. "<cr>",
+				{ silent = true }
 			)
 		end
 		vim.keymap.set("n", "<A-0>", "<Cmd>BufferLineGoToBuffer -1<cr>", { silent = true })

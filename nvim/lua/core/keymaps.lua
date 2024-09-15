@@ -38,10 +38,10 @@ keymap("n", "<C-Right>", "<Cmd>vertical resize -2<cr>", opt)
 
 -- buffer movement
 -- this is only okay when not using bufferline
-keymap("n", "<A-l>", "<Cmd>bnext<cr>", opt)
-keymap("n", "<A-h>", "<Cmd>bprev<cr>", opt)
+-- keymap("n", "<A-l>", "<Cmd>bnext<cr>", opt)
+-- keymap("n", "<A-h>", "<Cmd>bprev<cr>", opt)
 keymap("n", "<leader>q", "<cmd>confirm q<cr>", opt)
-keymap("n", "<leader>c", "<Cmd>bdelete<cr>", opt)
+-- keymap("n", "<leader>bc", "<Cmd>bdelete<cr>", opt)
 
 -- disable highlight
 keymap("n", "<Esc>", "<cmd>nohl<cr>", opt)

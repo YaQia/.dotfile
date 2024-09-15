@@ -1,5 +1,31 @@
 local config = function()
 	local wk = require("which-key")
+
+	local harpoon = require("harpoon")
+	local conf = require("telescope.config").values
+	local function toggle_telescope(harpoon_files)
+		local file_paths = {}
+		for _, item in ipairs(harpoon_files.items) do
+			table.insert(file_paths, item.value)
+		end
+
+		require("telescope.pickers")
+			.new({}, {
+				prompt_title = "Harpoon",
+				finder = require("telescope.finders").new_table({
+					results = file_paths,
+				}),
+				previewer = conf.file_previewer({}),
+				sorter = conf.generic_sorter({}),
+			})
+			:find()
+	end
+	local toggle_opts = {
+		border = "rounded",
+		title_pos = "center",
+		ui_width_ratio = 0.40,
+	}
+	local remote_sshfs_api = require("remote-sshfs.api")
 	wk.add({
 		{
 			mode = { "v" },
@@ -7,11 +33,34 @@ local config = function()
 			{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 		},
 		-- default mode is Normal, no need to define
+		-- Single character
+		{
+			"<leader>a",
+			function()
+				harpoon:list():add()
+			end,
+			desc = "Add into Harpoon",
+		},
+		{
+			"<leader>h",
+			function()
+				harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts)
+			end,
+			desc = "Harpoon Explorer",
+		},
 		{ "<leader>;", "<cmd>Alpha<cr>", desc = "Dashboard" },
-		{ "<leader>e", "<cmd>lua require('oil').toggle_float()<cr>", desc = "Explorer" },
+		{ "<leader>e", "<cmd>lua require('oil').toggle_float()<cr>", desc = "File Explorer" },
 		{ "<leader>w", "<cmd>w!<cr>", desc = "Save" },
+		{ "<leader>c", "<cmd>confirm bdelete<cr>", desc = "Close Buffer" },
 		{ "<leader>q", "<cmd>confirm q<cr>", desc = "Quit" },
-		{ "<leader>c", "<cmd>bdelete!<cr>", desc = "Close Buffer" },
+		{ "<leader>Q", "<cmd>confirm qa<cr>", desc = "Quit All" },
+		-- Tab group
+		{ "<leader>t", group = "Tabs" },
+		{ "<leader>tn", "<cmd>tabnew<cr><cmd>Oil<cr>", desc = "New Tab" },
+		{ "<leader>tc", "<cmd>tabclose<cr>", desc = "Close Tab" },
+		{ "<leader>to", "<cmd>tabonly<cr>", desc = "Close Other Tabs" },
+		{ "<leader>tf", "<cmd>tabfirst<cr>", desc = "First Tab" },
+		{ "<leader>tl", "<cmd>tablast<cr>", desc = "Last Tab" },
 		-- Plugins group
 		{ "<leader>p", group = "Plugins" },
 		{ "<leader>pi", "<cmd>Lazy install<cr>", desc = "Install" },
@@ -55,7 +104,7 @@ local config = function()
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Files" },
 		{
 			"<leader>sb",
-			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = true})<cr>",
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = true, sort_mru = true})<cr>",
 			desc = "Buffers",
 		},
 		{ "<leader>sr", "<cmd>Telescope resume<cr>", desc = "Resume" },
@@ -69,19 +118,22 @@ local config = function()
 		{ "<leader>so", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
 		{ "<leader>sR", "<cmd>Telescope registers<cr>", desc = "Registers" },
 		{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
-		-- LaTeX group
-		{ "<leader>L", group = "LaTeX" },
-		{ "<leader>Lb", "<cmd>TexlabBuild<cr>", desc = "Build" },
-		{ "<leader>Lp", "<cmd>TexlabForward<cr>", desc = "Preview" },
+		{
+			"<leader>sh",
+			function()
+				toggle_telescope(harpoon:list())
+			end,
+			desc = "Harpoon Search",
+		},
 		-- remote group
 		{ "<leader>r", group = "Remote" },
-		{ "<leader>rc", require("remote-sshfs.api").connect, desc = "Connect" },
-		{ "<leader>rd", require("remote-sshfs.api").disconnect, desc = "Disconnect" },
-		{ "<leader>re", require("remote-sshfs.api").edit, desc = "Edit" },
+		{ "<leader>rc", remote_sshfs_api.connect, desc = "Connect" },
+		{ "<leader>rd", remote_sshfs_api.disconnect, desc = "Disconnect" },
+		{ "<leader>re", remote_sshfs_api.edit, desc = "Edit" },
 	})
 	wk.setup({
 		preset = "modern",
-		delay = function (ctx)
+		delay = function(ctx)
 			-- other mode
 			if ctx.mode ~= "n" then
 				return 2000
@@ -89,11 +141,11 @@ local config = function()
 			-- normal mode
 			return 500
 		end,
-		-- layout = {
-		-- 	width = { min = 20 }, -- min and max width of the columns
-		-- 	spacing = 3, -- spacing between columns
-		-- 	align = "right", -- align columns left, center or right
-		-- },
+		layout = {
+			width = { min = 8 }, -- min and max width of the columns
+			spacing = 6, -- spacing between columns
+			align = "left", -- align columns left, center or right
+		},
 		icons = {
 			rules = false,
 		},

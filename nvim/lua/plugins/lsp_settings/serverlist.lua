@@ -19,6 +19,7 @@ return {
 	"solargraph",
 	"volar",
 	"cmake",
+	"golangci_lint_ls",
 	-- "jdtls",
 	-- "drools_lsp",
 }
