@@ -23,7 +23,31 @@ local config = function()
 	--   end
 	-- end
 
-	local servers = require("plugins.lsp_settings.serverlist")
+	local servers = {
+		"clangd",
+		"rust_analyzer",
+		"gopls",
+		"bashls",
+		"lua_ls",
+		"yamlls",
+		"pyright",
+		"html",
+		"cssls",
+		"cssmodules_ls",
+		"dockerls",
+		"marksman",
+		"texlab",
+		"ts_ls",
+		"eslint",
+		"jsonls",
+		-- "svelte",
+		-- "solargraph",
+		"volar",
+		"cmake",
+		"golangci_lint_ls",
+		-- "jdtls",
+		-- "drools_lsp",
+	}
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 	local lspconfig = require("lspconfig")
 	-- require("mason").setup({
