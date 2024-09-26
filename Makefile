@@ -20,11 +20,14 @@ install:
 		cmake clang rust go ripgrep bear \
 		ttf-firacode-nerd noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming
 	@sudo pacman -Rcs gnome-music epiphany totem
-	@yay -Syu linuxqq wemeet-bin wechat-uos v2raya ttf-symbola bibata-cursor-theme adw-gtk3-git 
+	@yay -Syu linuxqq wemeet-bin wechat-uos v2raya ttf-symbola bibata-cursor-theme adw-gtk3-git rime-ice-pinyin-git
 	@# needed LSP support for nvim
 	@sudo pacman -Syu rust-analyzer gopls bash-language-server lua-language-server yaml-language-server pyright vscode-html-languageserver vscode-css-languageserver marksman texlab typescript-language-server eslint eslint-language-server vscode-json-languageserver vue-language-server cmake-language-server stylua
 	@yay -Syu cssmodules-language-server dockerfile-language-server golangci-lint-langserver-bin nodejs-compose-language-service
 	@#rustup install rust rust-src
+	@# setup git
+	@git config --global user.name "Ya Qia"
+	@git config --global user.email "yyaqia@gmail.com"
 
 config:
 	@# setup config files
