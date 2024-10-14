@@ -6,6 +6,6 @@ GenericName=Terminal emulator
 Comment=Fast, feature-rich, GPU based terminal
 TryExec=kitty
 StartupNotify=true
-Exec=env XCURSOR_SIZE=48 kitty
+Exec=env GLFW_IM_MODULE=ibus XCURSOR_SIZE=48 kitty
 Icon=kitty
 Categories=System;TerminalEmulator;

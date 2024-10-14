@@ -31,40 +31,26 @@ local config = function()
 	vim.keymap.set("n", "K", show_documentation, { silent = true })
 
 	local wk = require("which-key")
-	wk.register({
-		C = {
-			name = "Crates",
-			t = { crates.toggle, "Toggle" },
-			r = { crates.reload, "Reload" },
-			v = { crates.show_versions_popup, "Version" },
-			f = { crates.show_features_popup, "Features" },
-			d = { crates.show_dependencies_popup, "Dependencies" },
-			u = { crates.update_crate, "Update" },
-			a = { crates.update_all_crates, "Update All" },
-			U = { crates.upgrade_crate, "Upgrade" },
-			A = { crates.upgrade_all_crates, "Upgrade All" },
-		},
-	}, {
-		mode = "n", -- NORMAL mode
-		prefix = "<leader>",
-		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-		silent = true, -- use `silent` when creating keymaps
-		noremap = true, -- use `noremap` when creating keymaps
+	wk.add({
+		{ "<leader>C", group = "Crates", remap = false },
+		{ "<leader>CA", crates.upgrade_all_crates, desc = "Upgrade All", remap = false },
+		{ "<leader>CU", crates.upgrade_crate, desc = "Upgrade", remap = false },
+		{ "<leader>Ca", crates.update_all_crates, desc = "Update All", remap = false },
+		{ "<leader>Cd", crates.show_dependencies_popup, desc = "Dependencies", remap = false },
+		{ "<leader>Cf", crates.show_features_popup, desc = "Features", remap = false },
+		{ "<leader>Cr", crates.show_features_popup, desc = "Reload", remap = false },
+		{ "<leader>Ct", crates.toggle, desc = "Toggle", remap = false },
+		{ "<leader>Cu", crates.update_crate, desc = "Update", remap = false },
+		{ "<leader>Cv", crates.show_versions_popup, desc = "Version", remap = false },
 	})
 
-	wk.register({
-		C = {
-			name = "Crates",
-			u = { crates.update_crates, "Update" },
-			U = { crates.upgrade_crates, "Upgrade" },
+	wk.add({
+		{
+			mode = { "v" },
+			{ "<leader>C", group = "Crates", nowait = true, remap = false },
+			{ "<leader>CU", crates.upgrade_crates, desc = "Upgrade", nowait = true, remap = false },
+			{ "<leader>Cu", crates.update_crates, desc = "Update", nowait = true, remap = false },
 		},
-	}, {
-		mode = "v", -- VISUAL mode
-		prefix = "<leader>",
-		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-		silent = true, -- use `silent` when creating keymaps
-		noremap = true, -- use `noremap` when creating keymaps
-		nowait = true, -- use `nowait` when creating keymaps
 	})
 end
 

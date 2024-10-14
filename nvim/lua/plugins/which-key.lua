@@ -112,7 +112,6 @@ local config = function()
 		{ "<leader>su", "<cmd>Telescope undo<cr>", desc = "Undo History" },
 		{ "<leader>sc", "<cmd>Telescope colorscheme<cr>", desc = "Colorschemes" },
 		{ "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-		{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
 		{ "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Marks" },
 		{ "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
 		{ "<leader>so", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
