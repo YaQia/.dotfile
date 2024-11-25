@@ -9,5 +9,6 @@ return {
 	},
 	opts = {
 		-- configurations go here
+		attach_navic = false,
 	},
 }

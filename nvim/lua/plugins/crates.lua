@@ -5,15 +5,37 @@ local config = function()
 		popup = {
 			border = "rounded",
 		},
+		lsp = {
+			enabled = true,
+			on_attach = function (client, bufnr)
+				require("lsp_signature").on_attach({
+					hint_enable = true, -- virtual hint enable
+					hint_prefix = "• ",
+				}, bufnr)
+			end,
+			actions = true,
+			completion = true,
+			hover = true,
+		},
+		completion = {
+			crates = {
+				enabled = true, -- disabled by default
+				max_results = 8, -- The maximum number of search results to display
+				min_chars = 3 -- The minimum number of charaters to type before completions begin appearing
+			},
+			cmp = {
+				enabled = true,
+			}
+		}
 	})
 
-	vim.api.nvim_create_autocmd("BufRead", {
-		group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
-		pattern = "Cargo.toml",
-		callback = function()
-			cmp.setup.buffer({ sources = { { name = "crates" } } })
-		end,
-	})
+	-- vim.api.nvim_create_autocmd("BufRead", {
+	-- 	group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
+	-- 	pattern = "Cargo.toml",
+	-- 	callback = function()
+	-- 		cmp.setup.buffer({ sources = { { name = "crates" } } })
+	-- 	end,
+	-- })
 
 	local function show_documentation()
 		local filetype = vim.bo.filetype

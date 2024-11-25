@@ -1,14 +1,17 @@
 fish_add_path ~/.cargo/bin ~/.local/bin /usr/share/bcc/tools 
 set -x DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
+set -Ux http_proxy http://127.0.0.1:7890
+set -Ux https_proxy http://127.0.0.1:7890
+set -Ux all_proxy socks://127.0.0.1:7890
 #set -x EDITOR /bin/nvim
 #set -x TERMINAL /bin/kitty
-# set -x LANG zh_CN.UTF-8
-# set -x LANGUAGE zh_CN:en_US
+#set -x LANG zh_CN.UTF-8
+#set -x LANGUAGE zh_CN:en_US
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-#This is conflicted with remote-nvim plugin
+# This is conflicted with remote-nvim plugin
 alias s="kitten ssh"
 alias d="kitten diff"
 

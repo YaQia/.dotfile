@@ -73,6 +73,9 @@ local config = function()
 					hint_enable = true, -- virtual hint enable
 					hint_prefix = "• ",
 				}, bufnr)
+				if client.server_capabilities["documentSymbolProvider"] then
+					require("nvim-navic").attach(client, bufnr)
+				end
 			end,
 		}
 		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)

@@ -34,4 +34,4 @@ config:
 	@# echo $(OBJ_FILES)
 	@$(foreach obj_file,$(OBJ_FILES),$(shell test -f $(CONFIG_DIR)/$(obj_file) || (mkdir -p "$$(dirname $(CONFIG_DIR)/$(obj_file))" && ln -s $(PWD)/$(obj_file) $(CONFIG_DIR)/$(obj_file))))
 	@# setup for applications
-	@$(foreach desktop_app_file,$(DESKTOP_APP_FILES),$(shell test -f $(DESKTOP_FILE_DIR)/$(desktop_app_file) || ln -s $(PWD)/applications/$(desktop_app_file) $(DESKTOP_FILE_DIR)/$(desktop_app_file)))
+	# @$(foreach desktop_app_file,$(DESKTOP_APP_FILES),$(shell test -f $(DESKTOP_FILE_DIR)/$(desktop_app_file) || ln -s $(PWD)/applications/$(desktop_app_file) $(DESKTOP_FILE_DIR)/$(desktop_app_file)))
