@@ -32,7 +32,7 @@ local opts = {
 -- bufferline
 return {
 	"akinsho/bufferline.nvim",
-	event = "BufAdd",
+	-- event = "BufAdd",
 	-- version = "*",
 	branch = "main",
 	dependencies = "nvim-tree/nvim-web-devicons",

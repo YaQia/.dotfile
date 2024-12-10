@@ -1,11 +1,16 @@
 -- enable cache to speed up nvim load
 vim.loader.enable()
 -- this should be can for each computer
-vim.g.node_host_prog = '/home/ethan/.npm-global/bin/neovim-node-host'
+vim.g.node_host_prog = "/home/ethan/.npm-global/bin/neovim-node-host"
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.g.tex_flavor = 'latex'
+vim.g.tex_flavor = "latex"
+-- helps jumps out of the definition without too many C-o
+vim.cmd [[
+set tagfunc=v:lua.vim.lsp.tagfunc
+set jumpoptions+=stack
+]]
 
 local o = vim.opt
 
@@ -18,7 +23,7 @@ o.showmode = false -- use plugins to show mode
 o.mouse = "a"
 o.mousemoveevent = true
 o.showtabline = 1 -- 2 means always
-o.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
+o.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 o.showcmd = false
 o.cursorline = true -- highlight the cursor line
 o.number = true
@@ -53,34 +58,34 @@ o.whichwrap:append("hl") -- I only use hl now
 
 -- lsp configs
 local signs = {
-  { name = "DiagnosticSignError", text = "" },
-  { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "󰌶" },
-  { name = "DiagnosticSignInfo", text = "" },
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "󰌶" },
+	{ name = "DiagnosticSignInfo", text = "" },
 }
 
 for _, sign in ipairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
 local config = {
-  -- disable virtual text
-  virtual_text = true,
-  -- show signs
-  signs = {
-    active = signs,
-  },
-  update_in_insert = false,
-  underline = true,
-  severity_sort = true,
-  float = {
-    focusable = false,
-    style = "minimal",
-    border = "rounded",
-    source = "always",
-    header = "",
-    prefix = "",
-  },
+	-- disable virtual text
+	virtual_text = true,
+	-- show signs
+	signs = {
+		active = signs,
+	},
+	update_in_insert = false,
+	underline = true,
+	severity_sort = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
 }
 
 vim.diagnostic.config(config)
@@ -88,11 +93,11 @@ vim.diagnostic.config(config)
 -- lsp settings
 vim.lsp.set_log_level("off")
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
+	border = "rounded",
 })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = "rounded",
+	border = "rounded",
 })
 
 -- vim.cmd[[ autocmd BufRead,BufNewFile *.drl set filetype=drools ]]
