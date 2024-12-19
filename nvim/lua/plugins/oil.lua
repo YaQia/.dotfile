@@ -14,6 +14,10 @@ return {
 		},
 		keymaps = {
 			["<Backspace>"] = "actions.parent",
+			["<CR>"] = "actions.select",
+			["<C-\\>"] = { "actions.select", opts = { vertical = true } },
+			["<C-CR>"] = { "actions.select", opts = { horizontal = true } },
+			["<S-CR>"] = { "actions.select", opts = { tab = true } },
 		},
 		view_options = {
 			-- Show files and directories that start with "."

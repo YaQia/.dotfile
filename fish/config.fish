@@ -1,4 +1,4 @@
-fish_add_path ~/.cargo/bin ~/.local/bin /usr/share/bcc/tools ~/.config/emacs/bin
+fish_add_path ~/.cargo/bin ~/.local/bin /usr/share/bcc/tools
 set -x DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 set -Ux http_proxy http://127.0.0.1:7897
 set -Ux https_proxy http://127.0.0.1:7897

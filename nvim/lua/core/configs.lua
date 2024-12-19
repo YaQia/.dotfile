@@ -6,11 +6,6 @@ vim.g.node_host_prog = "/home/ethan/.npm-global/bin/neovim-node-host"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.tex_flavor = "latex"
--- helps jumps out of the definition without too many C-o
-vim.cmd [[
-set tagfunc=v:lua.vim.lsp.tagfunc
-set jumpoptions+=stack
-]]
 
 local o = vim.opt
 
@@ -52,6 +47,7 @@ o.updatetime = 300
 o.whichwrap:append("hl") -- I only use hl now
 -- o.iskeyword:append("-")                -- I don't like it, it is dangerous
 -- o.formatoptions:remove("cro")
+o.jumpoptions = "stack" -- helps jumps out of the definition without too many C-o
 
 -- colorscheme
 -- vim.cmd.colorscheme("darkplus")
