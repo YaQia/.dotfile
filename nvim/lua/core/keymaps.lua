@@ -60,8 +60,8 @@ keymap("n", "<Esc>", "<cmd>nohl<cr>", opt)
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 
--- keymap("v", "H", "^")
--- keymap("v", "L", "$")
+keymap("v", "H", "^")
+keymap("v", "L", "$")
 
 -- move text up and down
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", opt)

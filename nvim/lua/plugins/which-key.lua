@@ -56,7 +56,7 @@ local config = function()
 		{ "<leader>Q", "<cmd>confirm qa<cr>", desc = "Quit All" },
 		-- Tab group
 		{ "<leader>t", group = "Tabs" },
-		{ "<leader>tn", "<cmd>tabnew<cr><cmd>Oil<cr>", desc = "New Tab" },
+		{ "<leader>tn", "<cmd>tabnew<cr>", desc = "New Tab" },
 		{ "<leader>tc", "<cmd>tabclose<cr>", desc = "Close Tab" },
 		{ "<leader>to", "<cmd>tabonly<cr>", desc = "Close Other Tabs" },
 		{ "<leader>tf", "<cmd>tabfirst<cr>", desc = "First Tab" },

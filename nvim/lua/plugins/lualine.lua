@@ -48,7 +48,7 @@ local diff = {
 local filename = {
 	"filename",
 	symbols = {
-		modified = "⬤", -- Text to show when the file is modified.
+		modified = "[+]", -- Text to show when the file is modified.
 		readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
 		unnamed = "[No Name]", -- Text to show for unnamed buffers.
 		newfile = "[New]", -- Text to show for newly created file before first write
@@ -98,6 +98,7 @@ local opts = {
 		disabled_filetypes = { "dashboard", "NvimTree" },
 		always_divide_middle = true,
 		always_show_tabline = false,
+		globalstatus = true,
 	},
 	sections = {
 		lualine_a = {

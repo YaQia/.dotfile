@@ -1,0 +1,347 @@
+{
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    // "vim.statusBarColorControl": false,
+    // "vim.statusBarColors.normal": [
+    //     "#569cd6",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.insert": [
+    //     "#6a9955",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.visual": [
+    //     "#c586c0",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.visualline": [
+    //     "#c586c0",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.visualblock": [
+    //     "#c586c0",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.replace": [
+    //     "#d16969",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.commandlineinprogress": [
+    //     "#D7BA7D",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.searchinprogressmode": [
+    //     "#D7BA7D",
+    //     "#252525",
+    // ],
+    // "vim.statusBarColors.easymotionmode": "#007ACC",
+    // "vim.statusBarColors.easymotioninputmode": "#007ACC",
+    // "vim.statusBarColors.surroundinputmode": "#007ACC",
+    // "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindings": [],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ],
+        },
+        {
+            "before": [
+                "H",
+            ],
+            "after": [
+                "^",
+            ],
+        },
+        {
+            "before": [
+                "L",
+            ],
+            "after": [
+                "$",
+            ],
+        },
+        {
+            "before": [
+                "K",
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ],
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ],
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ],
+        },
+        {
+            "before": [
+                "g",
+                "I"
+            ],
+            "commands": [
+                "references-view.showIncomingCalls"
+            ],
+        },
+        {
+            "before": [
+                "g",
+                "O"
+            ],
+            "commands": [
+                "references-view.showOutgoingCalls"
+            ],
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ],
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ],
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ],
+        },
+        {
+            "before": [
+                "H",
+            ],
+            "after": [
+                "^",
+            ],
+        },
+        {
+            "before": [
+                "L",
+            ],
+            "after": [
+                "$",
+            ],
+        },
+    ],
+    "editor.fontFamily": "'Firacode Nerd Font'",
+    "editor.fontSize": 15,
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "*.mutable": {
+                "underline": false,
+            },
+        },
+    },
+    "vspacecode.bindingOverrides": [
+        {
+            "keys": "e",
+            "name": "File explorer",
+            "icon": "split-horizontal",
+            "type": "command",
+            "command": "file-browser.open",
+        },
+        {
+            "keys": "t",
+            "name": "Toggle sidebar",
+            "icon": "split-horizontal",
+            "type": "command",
+            "command": "workbench.action.toggleSidebarVisibility",
+        },
+        {
+            "keys": "w",
+            "name": "Save file",
+            "icon": "save",
+            "type": "command",
+            "command": "workbench.action.files.save",
+        },
+        {
+            "keys": "c",
+            "name": "Close window",
+            "icon": "close",
+            "type": "command",
+            "command": "workbench.action.closeActiveEditor"
+        },
+        {
+            "keys": "q",
+            "name": "Close file",
+            "icon": "close",
+            "type": "command",
+            "command": "workbench.action.closeEditorInAllGroups"
+        },
+        {
+            "key": " ",
+            "name": "Commands",
+            "icon": "rocket",
+            "type": "command",
+            "command": "workbench.action.showCommands"
+        },
+        {
+            "key": "\t",
+            "name": "Last buffer",
+            "icon": "go-to-file",
+            "type": "commands",
+            "commands": [
+                "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+                "list.select"
+            ]
+        },
+        {
+            "key": "*",
+            "name": "Search in project with selection",
+            "icon": "search",
+            "type": "commands",
+            "commands": [
+                "editor.action.addSelectionToNextFindMatch",
+                "workbench.action.findInFiles",
+                "search.action.focusSearchList"
+            ]
+        },
+        {
+            "key": ".",
+            "name": "Repeat most recent action",
+            "icon": "redo",
+            "type": "command",
+            "command": "whichkey.repeatMostRecent",
+            "args": "vspacecode.bindings"
+        },
+        {
+            "key": "/",
+            "name": "Search in project",
+            "icon": "search",
+            "type": "command",
+            "command": "workbench.action.findInFiles"
+        },
+        {
+            "keys": "l",
+            "name": "+LSP",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "f",
+                    "name": "Format buffer",
+                    "type": "command",
+                    "command": "editor.action.formatDocument",
+                },
+                {
+                    "key": "a",
+                    "name": "Execute code action",
+                    "type": "command",
+                    "command": "editor.action.quickFix",
+                },
+                {
+                    "key": "r",
+                    "name": "Rename symbol",
+                    "type": "command",
+                    "command": "editor.action.rename",
+                },
+                {
+                    "key": "j",
+                    "name": "Next problem",
+                    "type": "command",
+                    "icon": "arrow-down",
+                    "command": "editor.action.marker.next",
+                },
+                {
+                    "key": "k",
+                    "name": "Previous problem",
+                    "type": "command",
+                    "icon": "arrow-up",
+                    "command": "editor.action.marker.prev",
+                },
+                {
+                    "key": "s",
+                    "name": "Search symbols in this file",
+                    "type": "command",
+                    "command": "workbench.action.gotoSymbol",
+                },
+                {
+                    "key": "S",
+                    "name": "Search symbols in the project",
+                    "type": "command",
+                    "command": "workbench.action.showAllSymbols"
+                },
+                {
+                    "key": "b",
+                    "name": "Build project",
+                    "type": "command",
+                    "command": "workbench.action.tasks.build",
+                },
+            ]
+        },
+        {
+            "keys": "s",
+            "name": "+Search",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "t",
+                    "name": "Text",
+                    "type": "command",
+                    "commands": [
+                        "editor.action.addSelectionToNextFindMatch",
+                        "workbench.action.findInFiles",
+                        "search.action.focusSearchList"
+                    ],
+                },
+                {
+                    "key": "b",
+                    "name": "Buffers",
+                    "type": "command",
+                    "commands": [
+                        "workbench.action.quickOpen",
+                    ],
+                }
+            ],
+        },
+        {
+            "keys": "f",
+            "name": "+File",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "f",
+                    "name": "File",
+                    "type": "command",
+                    "command": ""
+                }
+            ],
+        },
+    ],
+    "vspacecode.bindings": [],
+    "editor.lineNumbers": "relative",
+    "window.menuBarVisibility": "hidden",
+    "editor.fontLigatures": true,
+    "editor.suggest.selectionMode": "never",
+    "editor.tabCompletion": "on",
+}

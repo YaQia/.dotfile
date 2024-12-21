@@ -47,6 +47,7 @@ local config = function()
 			["<CR>"] = cmp.mapping.confirm({ select = false }),
 			-- Ctrl+Space to trigger completion menu
 			["<C-Space>"] = cmp.mapping.complete(),
+			["<Space>"] = cmp.mapping.abort(),
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
