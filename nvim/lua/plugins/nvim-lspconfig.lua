@@ -77,6 +77,7 @@ local config = function()
 					require("nvim-navic").attach(client, bufnr)
 				end
 			end,
+			-- this is important to let cmp_nvim_lsp to convert function signature into snippet
 			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		}
 		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
