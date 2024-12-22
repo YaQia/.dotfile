@@ -77,6 +77,7 @@ local config = function()
 					require("nvim-navic").attach(client, bufnr)
 				end
 			end,
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		}
 		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
 		if require_ok then

@@ -25,7 +25,7 @@ o.number = true
 o.relativenumber = true
 -- o.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%r│%T"
 o.laststatus = 3 -- means statuscolumn will only on the bottom
-o.tabstop = 8
+o.tabstop = 4
 o.shiftwidth = 4
 o.softtabstop = 4
 o.expandtab = false
