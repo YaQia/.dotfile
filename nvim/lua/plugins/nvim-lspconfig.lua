@@ -24,6 +24,7 @@ local config = function()
 	-- end
 
 	local servers = {
+		"asm_lsp",
 		"clangd",
 		"rust_analyzer",
 		"gopls",
@@ -77,13 +78,13 @@ local config = function()
 					require("nvim-navic").attach(client, bufnr)
 				end
 			end,
-			-- this is important to let cmp_nvim_lsp to convert function signature into snippet
-			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		}
 		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", conf_opts, opts)
 		end
+
+		opts.capabilities = require('blink.cmp').get_lsp_capabilities(opts.capabilities)
 
 		lspconfig[server].setup(opts)
 	end

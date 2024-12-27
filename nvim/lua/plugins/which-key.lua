@@ -82,7 +82,7 @@ local config = function()
 		{ "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk" },
 		{ "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open Changed File" },
 		{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout Branch" },
-		{ "<leader>gc", "<cmd>Telescope git_commites<cr>", desc = "Checkout Commit" },
+		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout Commit" },
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
 		-- LSP group
 		{ "<leader>l", group = "LSP" },
