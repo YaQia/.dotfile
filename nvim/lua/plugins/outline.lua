@@ -1,6 +1,7 @@
 return {
 	"hedyhli/outline.nvim",
 	lazy = true,
+	dependencies = { "onsails/lspkind.nvim" },
 	cmd = { "Outline", "OutlineOpen" },
 	keys = { -- Example mapping to toggle outline
 		{ "<leader>lo", "<cmd>Outline<CR>", desc = "Toggle outline" },
