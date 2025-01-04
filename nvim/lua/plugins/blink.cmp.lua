@@ -123,7 +123,10 @@ return {
 			-- },
 		},
 
-		signature = { window = { border = "rounded" } },
+		signature = {
+			enabled = true,
+			window = { border = "rounded" },
+		},
 	},
 	opts_extend = { "sources.default" },
 }

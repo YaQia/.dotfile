@@ -70,12 +70,12 @@ local config = function()
 	for _, server in pairs(servers) do
 		opts = {
 			on_attach = function(client, bufnr)
-				require("lsp_signature").on_attach({
-					hint_enable = true, -- virtual hint enable
-					hint_prefix = "• ",
-				}, bufnr)
-				if client.server_capabilities["documentSymbolProvider"] then
-					require("nvim-navic").attach(client, bufnr)
+				-- Check if the file is a Vue file and the client is ts_ls
+				local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+				if not (client.name == "ts_ls" and filetype == "vue") then
+					if client.server_capabilities["documentSymbolProvider"] then
+						require("nvim-navic").attach(client, bufnr)
+					end
 				end
 			end,
 			-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
@@ -85,7 +85,7 @@ local config = function()
 			opts = vim.tbl_deep_extend("force", conf_opts, opts)
 		end
 
-		opts.capabilities = require('blink.cmp').get_lsp_capabilities(opts.capabilities)
+		opts.capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)
 
 		lspconfig[server].setup(opts)
 	end
