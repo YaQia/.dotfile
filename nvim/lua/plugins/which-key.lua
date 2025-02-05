@@ -89,7 +89,14 @@ local config = function()
 		{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 		{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Current File Diagnostics" },
 		{ "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
-		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
+		{
+			"<leader>li",
+			function()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+			end,
+			desc = "Toggle Inlay Hint",
+		},
+		{ "<leader>lI", "<cmd>LspInfo<cr>", desc = "Info" },
 		{ "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next Diagnostics" },
 		{ "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Prev Diagnostics" },
 		{ "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format" },

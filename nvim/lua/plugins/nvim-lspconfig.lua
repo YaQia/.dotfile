@@ -48,6 +48,7 @@ local config = function()
 		"golangci_lint_ls",
 		-- "jdtls",
 		-- "drools_lsp",
+		"zls",
 	}
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 	local lspconfig = require("lspconfig")
@@ -79,6 +80,7 @@ local config = function()
 				end
 			end,
 			-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			-- capabilities = require("blink.cmp").get_lsp_capabilities()
 		}
 		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
 		if require_ok then
@@ -93,6 +95,7 @@ end
 
 return {
 	"neovim/nvim-lspconfig",
+	dependencies = { "saghen/blink.cmp" },
 	-- lazy = false,
 	-- dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
 	event = { "BufReadPost", "BufNewFile" },

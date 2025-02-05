@@ -6,9 +6,9 @@ return {
 	lazy = true,
 
 	-- use a release tag to download pre-built binaries
-	version = "*",
+	-- version = "*",
 	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-	-- build = 'cargo build --release',
+	build = "cargo build --release",
 	-- If you use nix, you can build from source using latest nightly rust with:
 	-- build = 'nix run .#build-plugin',
 
@@ -104,7 +104,7 @@ return {
 		},
 
 		completion = {
-			list = { selection = "auto_insert" },
+			list = { selection = { preselect = false, auto_insert = true } },
 			menu = {
 				border = "rounded",
 			},
@@ -130,6 +130,8 @@ return {
 			enabled = true,
 			window = { border = "rounded" },
 		},
+
+		snippets = { preset = "luasnip" },
 	},
 	opts_extend = { "sources.default" },
 }
