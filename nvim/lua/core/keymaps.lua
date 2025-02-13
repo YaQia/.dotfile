@@ -63,7 +63,7 @@ keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", opt)
 keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", opt)
 
 -- keep the copy buffer unchanged
-keymap("v", "p", '"_dP')
+keymap("x", "p", '"_dP')
 
 -- Visual Block Mode --
 keymap("x", "<A-j>", ":m '>+1<cr>gv=gv", opt)
