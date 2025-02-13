@@ -68,7 +68,7 @@ local config = function()
 
 	wk.add({
 		{
-			mode = { "v" },
+			mode = { "x" },
 			{ "<leader>C", group = "Crates", nowait = true, remap = false },
 			{ "<leader>CU", crates.upgrade_crates, desc = "Upgrade", nowait = true, remap = false },
 			{ "<leader>Cu", crates.update_crates, desc = "Update", nowait = true, remap = false },

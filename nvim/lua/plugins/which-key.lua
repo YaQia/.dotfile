@@ -28,7 +28,7 @@ local config = function()
 	local remote_sshfs_api = require("remote-sshfs.api")
 	wk.add({
 		{
-			mode = { "v" },
+			mode = { "x" },
 			{ "leader>l", group = "LSP" },
 			{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 		},

@@ -52,22 +52,19 @@ keymap("n", "<leader>q", "<cmd>confirm q<cr>", opt)
 keymap("n", "<Esc>", "<cmd>nohl<cr>", opt)
 
 -- Visual Mode --
-keymap("v", "<", "<gv")
-keymap("v", ">", ">gv")
+-- x is only for Visual Mode, not including Select Mode
+keymap("x", "<", "<gv")
+keymap("x", ">", ">gv")
 
-keymap("v", "H", "^")
-keymap("v", "L", "$")
+keymap("x", "H", "^")
+keymap("x", "L", "$")
 
 -- move text up and down
-keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", opt)
-keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", opt)
+keymap("x", "<A-j>", ":m '>+1<cr>gv=gv", opt)
+keymap("x", "<A-k>", ":m '<-2<cr>gv=gv", opt)
 
 -- keep the copy buffer unchanged
 keymap("x", "p", '"_dP')
-
--- Visual Block Mode --
-keymap("x", "<A-j>", ":m '>+1<cr>gv=gv", opt)
-keymap("x", "<A-k>", ":m '<-2<cr>gv=gv", opt)
 
 -- keymap("n", "<C-e>", function()
 -- 	local result = vim.treesitter.get_captures_at_cursor(0)
