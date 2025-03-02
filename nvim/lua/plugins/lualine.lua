@@ -113,7 +113,7 @@ local opts = {
 			},
 		},
 		lualine_b = { filename },
-		lualine_c = { branch, "harpoon2" },
+		lualine_c = { branch },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diagnostics, diff, spaces, "encoding" },
 		lualine_y = { "filetype" },

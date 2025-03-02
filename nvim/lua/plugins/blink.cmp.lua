@@ -4,6 +4,7 @@ return {
 	dependencies = "rafamadriz/friendly-snippets",
 	-- event = { "InsertEnter", "CmdlineEnter" },
 	lazy = true,
+	-- enabled = false,
 
 	-- use a release tag to download pre-built binaries
 	-- version = "*",
@@ -25,17 +26,19 @@ return {
 
 			["<Tab>"] = {
 				"select_next",
-				"snippet_forward",
+				-- "snippet_forward",
 				"fallback",
 			},
 			["<S-Tab>"] = {
 				"select_prev",
-				"snippet_backward",
+				-- "snippet_backward",
 				"fallback",
 			},
 			["<CR>"] = { "accept", "fallback" },
 			-- disable a keymap from the preset
 			["<C-e>"] = { "hide", "fallback" },
+			["<C-j>"] = { "snippet_forward" },
+			["<C-k>"] = { "snippet_backward" },
 			["<C-space>"] = { "hide", "show" },
 
 			-- show with a list of providers
@@ -55,17 +58,21 @@ return {
 			-- 	end,
 			-- 	"select_next",
 			-- },
-
-			-- optionally, separate cmdline keymaps
-			cmdline = {
+		},
+		-- optionally, separate cmdline keymaps
+		cmdline = {
+			enabled = true,
+			keymap = {
 				preset = "super-tab",
 
 				["<Tab>"] = {
 					"select_next",
+					"show",
 					"fallback",
 				},
 				["<S-Tab>"] = {
 					"select_prev",
+					"show",
 					"fallback",
 				},
 				-- ["<CR>"] = { "accept", "fallback" },
@@ -85,6 +92,30 @@ return {
 					"fallback",
 				},
 			},
+			-- sources = function()
+			-- 	local type = vim.fn.getcmdtype()
+			-- 	-- Search forward and backward
+			-- 	if type == "/" or type == "?" then
+			-- 		return { "buffer" }
+			-- 	end
+			-- 	-- Commands
+			-- 	if type == ":" or type == "@" then
+			-- 		return { "cmdline" }
+			-- 	end
+			-- 	return {}
+			-- end,
+			-- completion = {
+			-- 	trigger = {
+			-- 		show_on_blocked_trigger_characters = {},
+			-- 		show_on_x_blocked_trigger_characters = nil, -- Inherits from top level `completion.trigger.show_on_blocked_trigger_characters` config when not set
+			-- 	},
+			-- 	menu = {
+			-- 		auto_show = nil, -- Inherits from top level `completion.menu.auto_show` config when not set
+			-- 		draw = {
+			-- 			columns = { { "label", "label_description", gap = 1 } },
+			-- 		},
+			-- 	},
+			-- },
 		},
 
 		appearance = {
@@ -116,9 +147,9 @@ return {
 				},
 			},
 			ghost_text = { enabled = false },
-			trigger = {
-				show_on_insert_on_trigger_character = false,
-			},
+			-- trigger = {
+			-- 	show_on_insert_on_trigger_character = false,
+			-- },
 			-- keyword = {
 			-- 	range = 'prefix',
 			-- 	regex = '[-_@]\\|\\k',

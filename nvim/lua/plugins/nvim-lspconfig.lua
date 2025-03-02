@@ -95,7 +95,22 @@ end
 
 return {
 	"neovim/nvim-lspconfig",
-	dependencies = { "saghen/blink.cmp" },
+	dependencies = {
+		"saghen/blink.cmp",
+		{
+			"SmiteshP/nvim-navbuddy",
+			dependencies = {
+				"SmiteshP/nvim-navic",
+				"MunifTanjim/nui.nvim",
+			},
+			opts = {
+				window = {
+					border = "rounded",
+				},
+				lsp = { auto_attach = true },
+			},
+		},
+	},
 	-- lazy = false,
 	-- dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
 	event = { "BufReadPost", "BufNewFile" },

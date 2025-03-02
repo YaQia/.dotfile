@@ -1,30 +1,6 @@
 local config = function()
 	local wk = require("which-key")
 
-	local harpoon = require("harpoon")
-	local conf = require("telescope.config").values
-	local function toggle_telescope(harpoon_files)
-		local file_paths = {}
-		for _, item in ipairs(harpoon_files.items) do
-			table.insert(file_paths, item.value)
-		end
-
-		require("telescope.pickers")
-			.new({}, {
-				prompt_title = "Harpoon",
-				finder = require("telescope.finders").new_table({
-					results = file_paths,
-				}),
-				previewer = conf.file_previewer({}),
-				sorter = conf.generic_sorter({}),
-			})
-			:find()
-	end
-	local toggle_opts = {
-		border = "rounded",
-		title_pos = "center",
-		ui_width_ratio = 0.40,
-	}
 	local remote_sshfs_api = require("remote-sshfs.api")
 	wk.add({
 		{
@@ -35,30 +11,52 @@ local config = function()
 		-- default mode is Normal, no need to define
 		-- Single character
 		{
-			"<leader>a",
-			function()
-				harpoon:list():add()
-			end,
-			desc = "Add into Harpoon",
+			"<leader>;",
+			"<cmd>Alpha<cr>",
+			desc = "Dashboard",
 		},
 		{
-			"<leader>h",
-			function()
-				harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts)
-			end,
-			desc = "Harpoon Explorer",
+			"<leader>e",
+			"<cmd>lua require('oil').toggle_float()<cr>",
+			desc = "File Explorer",
 		},
-		{ "<leader>;", "<cmd>Alpha<cr>", desc = "Dashboard" },
-		{ "<leader>e", "<cmd>lua require('oil').toggle_float()<cr>", desc = "File Explorer" },
-		{ "<leader>w", "<cmd>w!<cr>", desc = "Save" },
-		{ "<leader>c", "<cmd>confirm bdelete<cr>", desc = "Close Buffer" },
-		{ "<leader>q", "<cmd>confirm q<cr>", desc = "Quit" },
-		{ "<leader>Q", "<cmd>confirm qa<cr>", desc = "Quit All" },
+		{
+			"<leader>w",
+			"<cmd>w!<cr>",
+			desc = "Save",
+		},
+		{
+			"<leader>c",
+			"<cmd>confirm bdelete<cr>",
+			desc = "Close Buffer",
+		},
+		{
+			"<leader>q",
+			"<cmd>confirm q<cr>",
+			desc = "Quit",
+		},
+		{
+			"<leader>Q",
+			"<cmd>confirm qa<cr>",
+			desc = "Quit All",
+		},
 		-- Tab group
 		{ "<leader>t", group = "Tabs" },
-		{ "<leader>tn", "<cmd>tabnew<cr>", desc = "New Tab" },
-		{ "<leader>tc", "<cmd>tabclose<cr>", desc = "Close Tab" },
-		{ "<leader>to", "<cmd>tabonly<cr>", desc = "Close Other Tabs" },
+		{
+			"<leader>tn",
+			"<cmd>tabnew<cr>",
+			desc = "New Tab",
+		},
+		{
+			"<leader>tc",
+			"<cmd>tabclose<cr>",
+			desc = "Close Tab",
+		},
+		{
+			"<leader>to",
+			"<cmd>tabonly<cr>",
+			desc = "Close Other Tabs",
+		},
 		{ "<leader>tf", "<cmd>tabfirst<cr>", desc = "First Tab" },
 		{ "<leader>tl", "<cmd>tablast<cr>", desc = "Last Tab" },
 		-- Plugins group
@@ -80,15 +78,27 @@ local config = function()
 		{ "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer" },
 		{ "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", desc = "Stage Hunk" },
 		{ "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk" },
-		{ "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open Changed File" },
+		{
+			"<leader>go",
+			"<cmd>Telescope git_status<cr>",
+			desc = "Open Changed File",
+		},
 		{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout Branch" },
 		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout Commit" },
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
 		-- LSP group
 		{ "<leader>l", group = "LSP" },
 		{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
-		{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Current File Diagnostics" },
-		{ "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
+		{
+			"<leader>ld",
+			"<cmd>Telescope diagnostics bufnr=0<cr>",
+			desc = "Current File Diagnostics",
+		},
+		{
+			"<leader>lw",
+			"<cmd>Telescope diagnostics<cr>",
+			desc = "Workspace Diagnostics",
+		},
 		{
 			"<leader>li",
 			function()
@@ -105,7 +115,8 @@ local config = function()
 		{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
 		{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
 		{ "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
-		{ "<leader>lo", "<cmd>Outline<cr>", desc = "Outline" },
+		{ "<leader>lo", "<cmd>Navbuddy<cr>", desc = "Outline" },
+		-- { "<leader>lO", "<cmd>AerialNavToggle<cr>", desc = "Outline Navigation" },
 		-- Search group
 		{ "<leader>s", group = "Search" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Files" },
@@ -124,13 +135,6 @@ local config = function()
 		{ "<leader>so", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
 		{ "<leader>sR", "<cmd>Telescope registers<cr>", desc = "Registers" },
 		{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
-		{
-			"<leader>sh",
-			function()
-				toggle_telescope(harpoon:list())
-			end,
-			desc = "Harpoon Search",
-		},
 		-- remote group
 		{ "<leader>r", group = "Remote" },
 		{ "<leader>rc", remote_sshfs_api.connect, desc = "Connect" },
