@@ -115,8 +115,7 @@ local config = function()
 		{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
 		{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
 		{ "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
-		{ "<leader>lo", "<cmd>Navbuddy<cr>", desc = "Outline" },
-		-- { "<leader>lO", "<cmd>AerialNavToggle<cr>", desc = "Outline Navigation" },
+		{ "<leader>lo", "<cmd>Outline<cr>", desc = "Outline" },
 		-- Search group
 		{ "<leader>s", group = "Search" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Files" },
