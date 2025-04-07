@@ -2,6 +2,18 @@ local config = function()
 	local wk = require("which-key")
 
 	local remote_sshfs_api = require("remote-sshfs.api")
+	Snacks.toggle.animate():map("<leader>ua")
+	Snacks.toggle.diagnostics():map("<leader>ud")
+	Snacks.toggle.dim():map("<leader>uD")
+	Snacks.toggle.indent():map("<leader>ui")
+	Snacks.toggle.inlay_hints():map("<leader>uI")
+	Snacks.toggle.line_number():map("<leader>ul")
+	Snacks.toggle.profiler():map("<leader>up")
+	Snacks.toggle.scroll():map("<leader>us")
+	Snacks.toggle.treesitter():map("<leader>ut")
+	Snacks.toggle.words():map("<leader>uw")
+	Snacks.toggle.zen():map("<leader>uz")
+	Snacks.toggle.zoom():map("<leader>uZ")
 	wk.add({
 		{
 			mode = { "x" },
@@ -14,6 +26,11 @@ local config = function()
 			"<leader>;",
 			"<cmd>Alpha<cr>",
 			desc = "Dashboard",
+		},
+		{
+			"<leader>/",
+			"<cmd>Telescope current_buffer_fuzzy_find<cr>",
+			desc = "Current Buffer Search",
 		},
 		{
 			"<leader>e",
@@ -139,6 +156,8 @@ local config = function()
 		{ "<leader>rc", remote_sshfs_api.connect, desc = "Connect" },
 		{ "<leader>rd", remote_sshfs_api.disconnect, desc = "Disconnect" },
 		{ "<leader>re", remote_sshfs_api.edit, desc = "Edit" },
+		-- ui group
+		{ "<leader>u", group = "UI" },
 	})
 	wk.setup({
 		preset = "modern",
@@ -153,10 +172,11 @@ local config = function()
 		layout = {
 			width = { min = 8 }, -- min and max width of the columns
 			spacing = 6, -- spacing between columns
-			align = "left", -- align columns left, center or right
+			align = "center", -- align columns left, center or right
 		},
 		icons = {
 			rules = false,
+			keys = { Space = "󱁐" },
 		},
 		win = {
 			no_overlap = false,

@@ -2,8 +2,8 @@ return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
 	dependencies = "rafamadriz/friendly-snippets",
-	-- event = { "InsertEnter", "CmdlineEnter" },
-	lazy = true,
+	event = { "InsertEnter", "CmdlineEnter" },
+	-- lazy = true,
 	-- enabled = false,
 
 	-- use a release tag to download pre-built binaries
@@ -62,6 +62,12 @@ return {
 		-- optionally, separate cmdline keymaps
 		cmdline = {
 			enabled = true,
+
+			completion = {
+				list = { selection = { preselect = false, auto_insert = true } },
+				menu = { auto_show = true },
+			},
+
 			keymap = {
 				preset = "super-tab",
 

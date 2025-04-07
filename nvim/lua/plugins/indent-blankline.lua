@@ -14,6 +14,7 @@ local opts = {
 return {
 	"lukas-reineke/indent-blankline.nvim",
 	-- dependencies = { "YaQia/darkplus.nvim" },
+	enabled = false,
 	event = "VeryLazy",
 	main = "ibl",
 	opts = opts,

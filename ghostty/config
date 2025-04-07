@@ -1,0 +1,35 @@
+theme = light:"Builtin Tango Light",dark:"Builtin Tango Dark"
+font-family = "FiraCode Nerd Font"
+font-size = 11
+window-padding-balance = true
+window-padding-color = extend
+window-theme = system
+mouse-scroll-multiplier = 2
+mouse-hide-while-typing = true
+background-opacity = 0.9
+unfocused-split-opacity = 0.8
+gtk-titlebar = true
+gtk-tabs-location = 
+gtk-titlebar-hide-when-maximized = false
+gtk-single-instance = true
+adjust-box-thickness = 2
+adjust-cursor-thickness = 2
+
+keybind = ctrl+shift+|=new_split:right
+keybind = ctrl+shift+enter=new_split:down
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+w=close_surface
+keybind = ctrl+shift+`=toggle_split_zoom
+keybind = ctrl+shift+up=resize_split:up,10
+keybind = ctrl+shift+down=resize_split:down,10
+keybind = ctrl+shift+left=resize_split:left,10
+keybind = ctrl+shift+right=resize_split:right,10
+keybind = ctrl+alt+enter=new_tab
+keybind = ctrl+alt+h=previous_tab
+keybind = ctrl+alt+l=next_tab
+keybind = ctrl+alt+w=close_tab
+keybind = ctrl+alt+shift+h=move_tab:-1
+keybind = ctrl+alt+shift+l=move_tab:1

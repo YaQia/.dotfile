@@ -21,6 +21,7 @@ local config = function()
 					},
 				},
 				dynamic_preview_title = true,
+				include_current_line = true,
 			},
 			lsp_definitions = {
 				theme = "cursor",

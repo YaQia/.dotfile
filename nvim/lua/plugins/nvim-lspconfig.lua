@@ -70,15 +70,15 @@ local config = function()
 	local opts
 	for _, server in pairs(servers) do
 		opts = {
-			on_attach = function(client, bufnr)
-				-- Check if the file is a Vue file and the client is ts_ls
-				local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
-				if not (client.name == "ts_ls" and filetype == "vue") then
-					if client.server_capabilities["documentSymbolProvider"] then
-						require("nvim-navic").attach(client, bufnr)
-					end
-				end
-			end,
+			-- on_attach = function(client, bufnr)
+			-- 	-- Check if the file is a Vue file and the client is ts_ls
+			-- 	local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+			-- 	if not (client.name == "ts_ls" and filetype == "vue") then
+			-- 		if client.server_capabilities["documentSymbolProvider"] then
+			-- 			require("nvim-navic").attach(client, bufnr)
+			-- 		end
+			-- 	end
+			-- end,
 			-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			-- capabilities = require("blink.cmp").get_lsp_capabilities()
 		}

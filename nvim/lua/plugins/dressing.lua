@@ -26,6 +26,7 @@ local opts = {
 
 return {
 	"stevearc/dressing.nvim",
+	enabled = false,
 	opts = opts,
 	event = "VeryLazy",
 }

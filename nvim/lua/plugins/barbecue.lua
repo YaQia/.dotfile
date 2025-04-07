@@ -1,7 +1,8 @@
 return {
 	"utilyre/barbecue.nvim",
 	name = "barbecue",
-    event = "LspAttach",
+	enabled = false,
+	-- event = "VimEnter", -- this is better than LspAttach, because the line will occur immediately.
 	version = "*",
 	dependencies = {
 		"SmiteshP/nvim-navic",

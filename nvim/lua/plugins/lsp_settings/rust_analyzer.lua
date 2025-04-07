@@ -1,4 +1,5 @@
 return {
+    offset_encoding = "utf-8",
 	settings = {
 		["rust-analyzer"] = {
 			-- 	cargo = {
