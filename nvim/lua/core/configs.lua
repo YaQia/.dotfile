@@ -12,9 +12,9 @@ local o = vim.opt
 -- basic configs
 o.clipboard = "unnamedplus"
 o.completeopt = { "menuone", "noselect" } -- completion will pop up when there is only one match
-o.conceallevel = 0                        -- no hide for ``
+o.conceallevel = 0 -- no hide for ``
 o.fileencoding = "utf-8"
-o.showmode = false                        -- use plugins to show mode
+o.showmode = false -- use plugins to show mode
 o.mouse = "a"
 o.mousemoveevent = true
 o.showtabline = 1 -- 2 means always
@@ -32,7 +32,7 @@ o.expandtab = false
 o.smartindent = true
 o.splitbelow = true -- force window to be splited into the bottom
 o.splitright = true
-o.wrap = false      -- display lines as one long line
+o.wrap = false -- display lines as one long line
 o.swapfile = false
 o.backup = false
 -- o.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -102,11 +102,11 @@ vim.diagnostic.config(config)
 
 -- lsp settings
 vim.lsp.set_log_level("off")
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({
 	border = "rounded",
 })
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({
 	border = "rounded",
 })
 
