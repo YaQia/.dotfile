@@ -1,5 +1,5 @@
 return {
-	"folke/snacks.nvim",
+	"YaQia/snacks.nvim",
 	priority = 1000,
 	lazy = false,
 	---@type snacks.Config
@@ -13,12 +13,20 @@ return {
 		},
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
-		explorer = { enabled = true },
+		explorer = { enabled = false },
 		git = { enabled = false },
-		image = { enabled = true },
+		image = {
+			enabled = false,
+			doc = {
+				inline = false,
+			},
+		},
 		indent = {
 			enabled = true,
-			animate = { easing = "outQuad" },
+			animate = {
+				enabled = false,
+				easing = "outQuad",
+			},
 			scope = {
 				char = "▏",
 			},
@@ -29,8 +37,8 @@ return {
 		input = { enabled = true },
 		picker = { enabled = true },
 		layout = { enabled = true },
-		notifier = { enabled = true },
-		notify = { enabled = true },
+		notifier = { enabled = false },
+		notify = { enabled = false },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = {

@@ -19,6 +19,9 @@ local config = function()
 			mode = { "x" },
 			{ "leader>l", group = "LSP" },
 			{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+			{ "<leader>a", group = "AI" },
+			{ "<leader>ae", "<cmd>CodeCompanion /explain<cr>", desc = "Explain Selected Codes" },
+			{ "<leader>af", "<cmd>CodeCompanion /fix<cr>", desc = "Fix Selected Codes" },
 		},
 		-- default mode is Normal, no need to define
 		-- Single character
@@ -44,7 +47,8 @@ local config = function()
 		},
 		{
 			"<leader>c",
-			"<cmd>confirm bdelete<cr>",
+			-- "<cmd>confirm bdelete<cr>",
+			"<cmd>lua vim.api.nvim_buf_delete(0, {})<cr>",
 			desc = "Close Buffer",
 		},
 		{
@@ -132,7 +136,7 @@ local config = function()
 		{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
 		{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
 		{ "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
-		{ "<leader>lo", "<cmd>Outline<cr>", desc = "Outline" },
+		{ "<leader>lo", "<cmd>AerialToggle<cr>", desc = "Outline" },
 		-- Search group
 		{ "<leader>s", group = "Search" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Files" },
@@ -158,6 +162,10 @@ local config = function()
 		{ "<leader>re", remote_sshfs_api.edit, desc = "Edit" },
 		-- ui group
 		{ "<leader>u", group = "UI" },
+		{ "<leader>a", group = "AI" },
+		{ "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "Chat" },
+		{ "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "Actions" },
+		{ "<leader>ah", "<cmd>CodeCompanionHistory<cr>", desc = "History" },
 	})
 	wk.setup({
 		preset = "modern",

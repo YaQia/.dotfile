@@ -9,23 +9,31 @@ return {
 			{
 				name = "@vue/typescript-plugin",
 				location = volar_path,
-				languages = { "vue" },
+				languages = { "javascript", "typescript", "vue" },
 			},
 		},
 	},
-	settings = {
-		typescript = {
-			inlayHints = {
-				includeInlayParameterNameHints = "all",
-				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayVariableTypeHints = true,
-				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayEnumMemberValueHints = true,
-			},
-		},
+	-- settings = {
+	-- 	typescript = {
+	-- 		inlayHints = {
+	-- 			includeInlayParameterNameHints = "all",
+	-- 			includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+	-- 			includeInlayFunctionParameterTypeHints = true,
+	-- 			includeInlayVariableTypeHints = true,
+	-- 			includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+	-- 			includeInlayPropertyDeclarationTypeHints = true,
+	-- 			includeInlayFunctionLikeReturnTypeHints = true,
+	-- 			includeInlayEnumMemberValueHints = true,
+	-- 		},
+	-- 	},
+	-- },
+	filetypes = {
+		"typescript",
+		"javascript",
+		"javascriptreact",
+		"typescriptreact",
+		"vue",
+		"javascript.jsx",
+		"typescript.tsx",
 	},
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 }

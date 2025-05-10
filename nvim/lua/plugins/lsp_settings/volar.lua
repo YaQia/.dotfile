@@ -11,26 +11,26 @@ return {
 		--   tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
 		-- },
 	},
-	settings = {
-		typescript = {
-			inlayHints = {
-				enumMemberValues = {
-					enabled = true,
-				},
-				functionLikeReturnTypes = {
-					enabled = true,
-				},
-				propertyDeclarationTypes = {
-					enabled = true,
-				},
-				parameterTypes = {
-					enabled = true,
-					suppressWhenArgumentMatchesName = true,
-				},
-				variableTypes = {
-					enabled = true,
-				},
-			},
-		},
-	},
+	-- settings = {
+	-- 	typescript = {
+	-- 		inlayHints = {
+	-- 			enumMemberValues = {
+	-- 				enabled = true,
+	-- 			},
+	-- 			functionLikeReturnTypes = {
+	-- 				enabled = true,
+	-- 			},
+	-- 			propertyDeclarationTypes = {
+	-- 				enabled = true,
+	-- 			},
+	-- 			parameterTypes = {
+	-- 				enabled = true,
+	-- 				suppressWhenArgumentMatchesName = true,
+	-- 			},
+	-- 			variableTypes = {
+	-- 				enabled = true,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 }
