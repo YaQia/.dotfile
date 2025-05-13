@@ -10,6 +10,8 @@ vim.g.tex_flavor = "latex"
 local o = vim.opt
 
 -- basic configs
+-- border of windows by default (this is dangerous)
+-- o.winborder = 'rounded'
 o.clipboard = "unnamedplus"
 o.completeopt = { "menuone", "noselect" } -- completion will pop up when there is only one match
 o.conceallevel = 0 -- no hide for ``
@@ -62,12 +64,12 @@ o.jumpoptions = "stack" -- helps jumps out of the definition without too many C-
 -- vim.cmd.colorscheme("darkplus")
 
 -- lsp configs
-local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "󰌶" },
-	{ name = "DiagnosticSignInfo", text = "" },
-}
+-- local signs = {
+-- 	{ name = "DiagnosticSignError", text = "" },
+-- 	{ name = "DiagnosticSignWarn", text = "" },
+-- 	{ name = "DiagnosticSignHint", text = "󰌶" },
+-- 	{ name = "DiagnosticSignInfo", text = "" },
+-- }
 
 -- for _, sign in ipairs(signs) do
 -- 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
@@ -102,12 +104,12 @@ vim.diagnostic.config(config)
 
 -- lsp settings
 vim.lsp.set_log_level("off")
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({
-	border = "rounded",
-})
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({
-	border = "rounded",
-})
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({
+-- 	border = "rounded",
+-- })
+--
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({
+-- 	border = "rounded",
+-- })
 
 -- vim.cmd[[ autocmd BufRead,BufNewFile *.drl set filetype=drools ]]

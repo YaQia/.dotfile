@@ -2,6 +2,7 @@ local config = function()
 	require("telescope").setup({
 		defaults = {
 			initial_mode = "insert",
+			path_display = { "filename_first" },
 		},
 		pickers = {
 			find_files = {
@@ -10,13 +11,13 @@ local config = function()
 			lsp_references = {
 				theme = "cursor",
 				initial_mode = "normal",
-				path_display = {
-					shorten = { len = 1, exclude = { -1 } },
-				},
+				-- path_display = {
+				-- 	shorten = { len = 1, exclude = { -1 } },
+				-- },
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 80,
+						preview_cutoff = 40,
 						width = 0.9,
 					},
 				},
@@ -26,13 +27,13 @@ local config = function()
 			lsp_definitions = {
 				theme = "cursor",
 				initial_mode = "normal",
-				path_display = {
-					shorten = { len = 1, exclude = { -1 } },
-				},
+				-- path_display = {
+				-- 	shorten = { len = 1, exclude = { -1 } },
+				-- },
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 80,
+						preview_cutoff = 40,
 						width = 0.9,
 					},
 				},
@@ -41,13 +42,13 @@ local config = function()
 			lsp_implementations = {
 				theme = "cursor",
 				initial_mode = "normal",
-				path_display = {
-					shorten = { len = 1, exclude = { -1 } },
-				},
+				-- path_display = {
+				-- 	shorten = { len = 1, exclude = { -1 } },
+				-- },
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 80,
+						preview_cutoff = 40,
 						width = 0.9,
 					},
 				},
@@ -56,13 +57,13 @@ local config = function()
 			lsp_incoming_calls = {
 				theme = "cursor",
 				initial_mode = "normal",
-				path_display = {
-					shorten = { len = 1, exclude = { -1 } },
-				},
+				-- path_display = {
+				-- 	shorten = { len = 1, exclude = { -1 } },
+				-- },
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 80,
+						preview_cutoff = 40,
 						width = 0.9,
 					},
 				},
@@ -71,13 +72,13 @@ local config = function()
 			lsp_outcoming_calls = {
 				theme = "cursor",
 				initial_mode = "normal",
-				path_display = {
-					shorten = { len = 1, exclude = { -1 } },
-				},
+				-- path_display = {
+				-- 	shorten = { len = 1, exclude = { -1 } },
+				-- },
 				layout_config = {
 					cursor = {
 						height = 0.4,
-						preview_cutoff = 80,
+						preview_cutoff = 40,
 						width = 0.9,
 					},
 				},
@@ -87,7 +88,7 @@ local config = function()
 		extensions = {
 			undo = {},
 			fzf = {
-				fuzzy = true, -- false will only do exact matching
+				fuzzy = true,       -- false will only do exact matching
 				override_generic_sorter = true, -- override the generic sorter
 				override_file_sorter = true, -- override the file sorter
 				case_mode = "smart_case", -- or "ignore_case" or "respect_case"

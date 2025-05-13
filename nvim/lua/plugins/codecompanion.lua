@@ -151,7 +151,13 @@ return {
 	-- lazy = false,
 	event = "VeryLazy",
 	dependencies = {
-		{ "j-hui/fidget.nvim",     lazy = false,    opts = {} },
+		{
+			"j-hui/fidget.nvim",
+			lazy = false,
+			opts = {
+				progress = { display = { done_icon = "󰦕" } },
+			},
+		},
 		{ "echasnovski/mini.diff", version = false, opts = {} },
 		"ravitemer/codecompanion-history.nvim",
 		{

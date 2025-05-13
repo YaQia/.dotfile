@@ -77,34 +77,48 @@ pcall(vim.keymap.del, "n", "gra")
 pcall(vim.keymap.del, "n", "gri")
 pcall(vim.keymap.del, "n", "grn")
 pcall(vim.keymap.del, "n", "grr")
-vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-	callback = function(ev)
-		-- Enable completion triggered by <c-x><c-o>
-		vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+-- vim.api.nvim_create_autocmd("LspAttach", {
+-- 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+-- 	callback = function(ev)
+-- 		-- Enable completion triggered by <c-x><c-o>
+-- 		vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+--
+-- 		local opts = { buffer = ev.buf }
+--
+-- 		keymap("n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
+-- 		-- This conflicts with nvim-ufo --
+-- 		keymap("n", "gd", vim.lsp.buf.definition, opts)
+-- 		keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+-- 		-- keymap("n", "gr", vim.lsp.buf.references, opts)
+-- 		keymap("n", "K", "<cmd>lua vim.lsp.buf.hover({border='rounded'})<cr>", opts)
+-- 		keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
+-- 		-- goto parent
+-- 		keymap("n", "gI", "<cmd>Telescope lsp_incoming_calls<cr>", opts)
+-- 		-- goto child
+-- 		keymap("n", "gO", "<cmd>Telescope lsp_outgoing_calls<cr>", opts)
+-- 		-- Buffer local mappings.
+-- 		-- See `:help vim.lsp.*` for documentation on any of the below functions
+-- 		-- keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+-- 		-- keymapis useless ↓
+-- 		-- keymapset("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
+-- 		-- keymapset("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+-- 		-- keymapset("n", "<leader>wl", function()
+-- 		--  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+-- 		-- end, opts)
+-- 		-- keymap("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+-- 	end,
+-- })
 
-		local opts = { buffer = ev.buf }
+local opts = { nowait = true, silent = true }
 
-		keymap("n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
-		-- This conflicts with nvim-ufo --
-		keymap("n", "gd", vim.lsp.buf.definition, opts)
-		keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
-		-- keymap("n", "gr", vim.lsp.buf.references, opts)
-		keymap("n", "K", "<cmd>lua vim.lsp.buf.hover({border='rounded'})<cr>", opts)
-		-- keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
-		-- goto parent
-		keymap("n", "gI", "<cmd>Telescope lsp_incoming_calls<cr>", opts)
-		-- goto child
-		keymap("n", "gO", "<cmd>Telescope lsp_outgoing_calls<cr>", opts)
-		-- Buffer local mappings.
-		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		-- keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-		-- keymapis useless ↓
-		-- keymapset("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-		-- keymapset("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-		-- keymapset("n", "<leader>wl", function()
-		--  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		-- end, opts)
-		-- keymap("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-	end,
-})
+keymap("n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
+-- This conflicts with nvim-ufo --
+keymap("n", "gd", vim.lsp.buf.definition, opts)
+keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+-- keymap("n", "gr", vim.lsp.buf.references, opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover({border='rounded'})<cr>", opts)
+keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
+-- goto parent
+keymap("n", "gI", "<cmd>Telescope lsp_incoming_calls<cr>", opts)
+-- goto child
+keymap("n", "gO", "<cmd>Telescope lsp_outgoing_calls<cr>", opts)

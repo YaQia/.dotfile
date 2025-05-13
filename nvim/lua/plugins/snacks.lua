@@ -14,11 +14,11 @@ return {
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
 		explorer = { enabled = false },
-		git = { enabled = false },
+		git = { enabled = true },
 		image = {
-			enabled = false,
+			enabled = true,
 			doc = {
-				inline = false,
+				inline = true,
 			},
 		},
 		indent = {
