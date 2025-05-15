@@ -14,11 +14,11 @@ return {
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
 		explorer = { enabled = false },
-		git = { enabled = true },
+		git = { enabled = false },
 		image = {
-			enabled = true,
+			enabled = false,
 			doc = {
-				inline = true,
+				inline = false,
 			},
 		},
 		indent = {
@@ -50,11 +50,11 @@ return {
 		},
 		statuscolumn = {
 			enabled = true,
-			left = { "mark", "sign" }, -- priority of signs on the left (high to low)
-			right = { "git", "fold" }, -- priority of signs on the right (high to low)
+			left = { "mark", "sign", "git" }, -- priority of signs on the left (high to low)
+			right = { "fold" }, -- priority of signs on the right (high to low)
 			folds = {
-				open = false, -- show open fold icons
-				git_hl = true, -- use Git Signs hl for fold icons
+				open = true, -- show open fold icons
+				git_hl = false, -- use Git Signs hl for fold icons
 			},
 			git = {
 				-- patterns to match Git signs

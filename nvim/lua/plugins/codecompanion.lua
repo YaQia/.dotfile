@@ -141,7 +141,8 @@ return {
 			-- 	end,
 			-- },
 		})
-
+		-- disable minidiff for git lines
+		vim.g.minidiff_disable = true
 		-- Expand 'cc' into 'CodeCompanion' in the command line
 		vim.cmd([[cab ai CodeCompanion]])
 	end,
@@ -158,7 +159,21 @@ return {
 				progress = { display = { done_icon = "󰦕" } },
 			},
 		},
-		{ "echasnovski/mini.diff", version = false, opts = {} },
+		{
+			"echasnovski/mini.diff",
+			version = false,
+			lazy = true,
+			opts = {
+				-- view = {
+				-- 	style = "sign",
+				-- 	signs = {
+				-- 		add = "▎",
+				-- 		change = "▎",
+				-- 		delete = "󰐊",
+				-- 	},
+				-- },
+			},
+		},
 		"ravitemer/codecompanion-history.nvim",
 		{
 			"MeanderingProgrammer/render-markdown.nvim",

@@ -6,9 +6,9 @@ return {
 		require("lint").linters_by_ft = {
 			-- lua = { "luacheck" },
 			markdown = { "markdownlint" },
-			c = { "clangtidy" },
-			cpp = { "clangtidy" },
-			rust = { "clippy" },
+			-- c = { "clangtidy" },
+			-- cpp = { "clangtidy" },
+			-- rust = { "clippy" },
 			sh = { "bash" },
 			bash = { "bash" },
 			fish = { "fish" },
