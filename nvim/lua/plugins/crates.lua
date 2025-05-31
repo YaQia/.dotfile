@@ -1,18 +1,18 @@
 local config = function()
 	local crates = require("crates")
-	local cmp = require("cmp")
+	-- local cmp = require("cmp")
 	crates.setup({
 		popup = {
 			border = "rounded",
 		},
 		lsp = {
 			enabled = true,
-			on_attach = function (client, bufnr)
-				require("lsp_signature").on_attach({
-					hint_enable = true, -- virtual hint enable
-					hint_prefix = "• ",
-				}, bufnr)
-			end,
+			-- on_attach = function (client, bufnr)
+			-- 	require("lsp_signature").on_attach({
+			-- 		hint_enable = true, -- virtual hint enable
+			-- 		hint_prefix = "• ",
+			-- 	}, bufnr)
+			-- end,
 			actions = true,
 			completion = true,
 			hover = true,
@@ -21,12 +21,12 @@ local config = function()
 			crates = {
 				enabled = true, -- disabled by default
 				max_results = 8, -- The maximum number of search results to display
-				min_chars = 3 -- The minimum number of charaters to type before completions begin appearing
+				min_chars = 3, -- The minimum number of charaters to type before completions begin appearing
 			},
-			cmp = {
-				enabled = true,
-			}
-		}
+			-- blink = {
+			-- 	enabled = true,
+			-- }
+		},
 	})
 
 	-- vim.api.nvim_create_autocmd("BufRead", {
@@ -46,7 +46,7 @@ local config = function()
 		elseif vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
 			require("crates").show_popup()
 		else
-			vim.lsp.buf.hover()
+			vim.lsp.buf.hover({ border = "rounded" })
 		end
 	end
 

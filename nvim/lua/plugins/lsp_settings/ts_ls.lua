@@ -1,4 +1,4 @@
-local volar_path = "/usr/lib/node_modules/@vue/language-server"
+local vue_ls_path = "/usr/lib/node_modules/@vue/language-server"
 -- local vue_language_server_path = '/path/to/@vue/language-server'
 
 -- local lspconfig = require('lspconfig')
@@ -8,7 +8,7 @@ return {
 		plugins = {
 			{
 				name = "@vue/typescript-plugin",
-				location = volar_path,
+				location = vue_ls_path,
 				languages = { "javascript", "typescript", "vue" },
 			},
 		},

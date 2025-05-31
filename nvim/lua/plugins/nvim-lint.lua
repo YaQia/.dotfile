@@ -12,7 +12,7 @@ return {
 			sh = { "bash" },
 			bash = { "bash" },
 			fish = { "fish" },
-			python = { "pylint" },
+			-- python = { "pylint" },
 			html = { "htmlhint" },
 			-- css = { "stylelint" },
 			-- scss = { "stylelint" },

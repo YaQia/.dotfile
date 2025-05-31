@@ -22,7 +22,7 @@ local config = function()
 					},
 				},
 				dynamic_preview_title = true,
-				include_current_line = true,
+				include_current_line = false,
 			},
 			lsp_definitions = {
 				theme = "cursor",

@@ -22,9 +22,9 @@ return {
 		wk.add({
 			-- LaTeX group
 			{ "<leader>L", group = "LaTeX" },
-			{ "<leader>Lb", "<cmd>TexlabBuild<cr>", desc = "Build" },
-			{ "<leader>Lp", "<cmd>TexlabForward<cr>", desc = "Preview" },
-			{ "<leader>Lc", "<cmd>TexlabCleanArtifacts<cr><cmd>TexlabCleanAuxiliary<cr>", desc = "Clean" },
+			{ "<leader>Lb", "<cmd>LspTexlabBuild<cr>", desc = "Build" },
+			{ "<leader>Lp", "<cmd>LspTexlabForward<cr>", desc = "Preview" },
+			{ "<leader>Lc", "<cmd>LspTexlabCleanArtifacts<cr><cmd>LspTexlabCleanAuxiliary<cr>", desc = "Clean" },
 		})
 	end,
 	ft = { "tex", "bib" }, -- Lazy-load on filetype
