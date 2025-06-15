@@ -2,6 +2,9 @@ return {
 	"olimorris/codecompanion.nvim",
 	config = function()
 		require("codecompanion").setup({
+			opts = {
+				language = "Chinese",
+			},
 			adapters = {
 				openrouter = function()
 					return require("codecompanion.adapters").extend("openai_compatible", {
@@ -25,17 +28,55 @@ return {
 						schema = {
 							model = {
 								default = "deepseek-chat",
+								choices = {
+									["deepseek-reasoner"] = { opts = { can_reason = true } },
+									"deepseek-chat",
+								},
 							},
 						},
 					})
 				end,
+				siliconflow = function()
+					return require("codecompanion.adapters").extend("openai_compatible", {
+						env = {
+							url = "https://api.siliconflow.cn",
+							api_key = "SILICONFLOW_API_KEY",
+						},
+						schema = {
+							model = {
+								default = "deepseek-ai/DeepSeek-R1",
+								choices = {
+									["deepseek-ai/DeepSeek-R1"] = { opts = { can_reason = true } },
+									"Pro/deepseek-ai/DeepSeek-V3",
+								},
+							},
+						},
+					})
+				end,
+				aliyun = function ()
+					return require("codecompanion.adapters").extend("openai_compatible", {
+						env = {
+							url = "https://dashscope.aliyuncs.com/compatible-mode",
+							api_key = "ALIYUN_API_KEY",
+						},
+						schema = {
+							model = {
+								default = "deepseek-r1",
+								choices = {
+									["deepseek-r1"] = { opts = { can_reason = true } },
+									"deepseek-v3",
+								},
+							},
+						},
+					})
+				end
 			},
 			strategies = {
 				chat = {
-					adapter = "deepseek",
-					roles = {
-						user = "yaqia",
-					},
+					adapter = "siliconflow",
+					-- roles = {
+					-- 	user = "yaqia",
+					-- },
 				},
 				inline = {
 					adapter = "deepseek",

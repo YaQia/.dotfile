@@ -36,8 +36,8 @@ return {
 			["<CR>"] = { "accept", "fallback" },
 			-- disable a keymap from the preset
 			["<C-e>"] = { "hide", "fallback" },
-			["<C-j>"] = { "snippet_forward", "fallback" },
-			["<C-k>"] = { "snippet_backward", "fallback" },
+			["<C-j>"] = { "snippet_forward" },
+			["<C-k>"] = { "snippet_backward" },
 			-- ["<C-space>"] = { "hide", "show" },
 
 			-- show with a list of providers

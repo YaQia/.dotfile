@@ -47,9 +47,9 @@ end
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = { "saghen/blink.cmp" },
-	-- lazy = false,
+	lazy = false,
 	-- dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
-	event = { "BufReadPost", "BufNewFile" },
+	-- event = { "BufReadPost", "BufNewFile" },
 	-- event = "VeryLazy",
 	cmd = { "LspInfo" },
 	config = config,
