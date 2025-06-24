@@ -52,14 +52,13 @@ o.whichwrap:append("hl") -- I only use hl now
 -- o.formatoptions:remove("cro")
 o.jumpoptions = "stack" -- helps jumps out of the definition without too many C-o
 -- folding
--- o.foldmethod = "expr"
--- o.foldexpr = "nvim_treesitter#foldexpr()"
--- o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- o.foldcolumn = "0" -- '0' is not bad
 -- o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 -- o.foldlevelstart = 99
 -- o.foldenable = true
--- o.statuscolumn = "%s%=%l%=%C"
+-- o.foldmethod = "expr"
+-- o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- colorscheme
 -- vim.cmd.colorscheme("darkplus")
 

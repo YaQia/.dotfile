@@ -113,7 +113,7 @@ local opts = { nowait = true, silent = true }
 
 keymap("n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
 -- This conflicts with nvim-ufo --
-keymap("n", "gd", vim.lsp.buf.definition, opts)
+keymap("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 -- keymap("n", "gr", vim.lsp.buf.references, opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover({border='rounded'})<cr>", opts)

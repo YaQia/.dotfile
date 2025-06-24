@@ -73,7 +73,7 @@ return {
 			},
 			strategies = {
 				chat = {
-					adapter = "siliconflow",
+					adapter = "deepseek",
 					-- roles = {
 					-- 	user = "yaqia",
 					-- },
