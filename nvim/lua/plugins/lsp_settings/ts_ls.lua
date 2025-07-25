@@ -4,15 +4,15 @@ local vue_ls_path = "/usr/lib/node_modules/@vue/language-server"
 -- local lspconfig = require('lspconfig')
 
 return {
-	init_options = {
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = vue_ls_path,
-				languages = { "javascript", "typescript", "vue" },
-			},
-		},
-	},
+	-- init_options = {
+	-- 	plugins = {
+	-- 		{
+	-- 			name = "@vue/typescript-plugin",
+	-- 			location = vue_ls_path,
+	-- 			languages = { "javascript", "typescript", "vue" },
+	-- 		},
+	-- 	},
+	-- },
 	-- settings = {
 	-- 	typescript = {
 	-- 		inlayHints = {
@@ -27,13 +27,13 @@ return {
 	-- 		},
 	-- 	},
 	-- },
-	filetypes = {
-		"typescript",
-		"javascript",
-		"javascriptreact",
-		"typescriptreact",
-		"vue",
-		"javascript.jsx",
-		"typescript.tsx",
-	},
+	-- filetypes = {
+	-- 	"typescript",
+	-- 	"javascript",
+	-- 	"javascriptreact",
+	-- 	"typescriptreact",
+	-- 	"vue",
+	-- 	"javascript.jsx",
+	-- 	"typescript.tsx",
+	-- },
 }

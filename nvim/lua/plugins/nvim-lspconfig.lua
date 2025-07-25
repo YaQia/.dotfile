@@ -20,7 +20,8 @@ local config = function()
 		"jsonls",
 		-- "svelte",
 		-- "solargraph",
-		"vue_ls",
+		-- "vtsls",		-- This is required to be load before vue_ls
+		-- "vue_ls",
 		"cmake",
 		-- "golangci_lint_ls",
 		-- "jdtls",
@@ -39,7 +40,7 @@ local config = function()
 
 		-- opts.capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)
 
-		vim.lsp.config[server] = opts
+		vim.lsp.config(server, opts)
 	end
 	vim.lsp.enable(servers)
 end

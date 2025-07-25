@@ -101,6 +101,14 @@ local config = {
 
 vim.diagnostic.config(config)
 
+vim.filetype.add({
+	extension = {
+		mdx = "mdx",
+	},
+})
+
+vim.treesitter.language.register("markdown", { "mdx" })
+
 -- lsp settings
 vim.lsp.set_log_level("off")
 -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({
