@@ -14,6 +14,7 @@ local config = function()
 		"cssmodules_ls",
 		-- "dockerls",
 		"marksman",
+		"mdx_analyzer",
 		"texlab",
 		"ts_ls",
 		"eslint",
@@ -38,7 +39,7 @@ local config = function()
 			opts = {}
 		end
 
-		-- opts.capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)
+		opts.capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)
 
 		vim.lsp.config(server, opts)
 	end
