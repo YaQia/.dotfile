@@ -6,70 +6,72 @@ return {
 				language = "Chinese",
 			},
 			adapters = {
-				openrouter = function()
-					return require("codecompanion.adapters").extend("openai_compatible", {
-						env = {
-							url = "https://openrouter.ai/api", -- optional: default value is ollama url http://127.0.0.1:11434
-							api_key = "OPENROUTER_API_KEY", -- optional: if your endpoint is authenticated
-							chat_url = "/v1/chat/completions", -- optional: default value, override if different
-						},
-						schema = {
-							model = {
-								default = "deepseek/deepseek-chat-v3-0324:free", -- define llm model to be used
+				http = {
+					openrouter = function()
+						return require("codecompanion.adapters").extend("openai_compatible", {
+							env = {
+								url = "https://openrouter.ai/api", -- optional: default value is ollama url http://127.0.0.1:11434
+								api_key = "OPENROUTER_API_KEY", -- optional: if your endpoint is authenticated
+								chat_url = "/v1/chat/completions", -- optional: default value, override if different
 							},
-						},
-					})
-				end,
-				deepseek = function()
-					return require("codecompanion.adapters").extend("deepseek", {
-						env = {
-							api_key = "DEEPSEEK_API_KEY",
-						},
-						schema = {
-							model = {
-								default = "deepseek-chat",
-								choices = {
-									["deepseek-reasoner"] = { opts = { can_reason = true } },
-									"deepseek-chat",
+							schema = {
+								model = {
+									default = "deepseek/deepseek-chat-v3-0324:free", -- define llm model to be used
 								},
 							},
-						},
-					})
-				end,
-				siliconflow = function()
-					return require("codecompanion.adapters").extend("openai_compatible", {
-						env = {
-							url = "https://api.siliconflow.cn",
-							api_key = "SILICONFLOW_API_KEY",
-						},
-						schema = {
-							model = {
-								default = "deepseek-ai/DeepSeek-R1",
-								choices = {
-									["deepseek-ai/DeepSeek-R1"] = { opts = { can_reason = true } },
-									"Pro/deepseek-ai/DeepSeek-V3",
+						})
+					end,
+					deepseek = function()
+						return require("codecompanion.adapters").extend("deepseek", {
+							env = {
+								api_key = "DEEPSEEK_API_KEY",
+							},
+							schema = {
+								model = {
+									default = "deepseek-chat",
+									choices = {
+										["deepseek-reasoner"] = { opts = { can_reason = true } },
+										"deepseek-chat",
+									},
 								},
 							},
-						},
-					})
-				end,
-				aliyun = function ()
-					return require("codecompanion.adapters").extend("openai_compatible", {
-						env = {
-							url = "https://dashscope.aliyuncs.com/compatible-mode",
-							api_key = "ALIYUN_API_KEY",
-						},
-						schema = {
-							model = {
-								default = "deepseek-r1",
-								choices = {
-									["deepseek-r1"] = { opts = { can_reason = true } },
-									"deepseek-v3",
+						})
+					end,
+					siliconflow = function()
+						return require("codecompanion.adapters").extend("openai_compatible", {
+							env = {
+								url = "https://api.siliconflow.cn",
+								api_key = "SILICONFLOW_API_KEY",
+							},
+							schema = {
+								model = {
+									default = "deepseek-ai/DeepSeek-R1",
+									choices = {
+										["deepseek-ai/DeepSeek-R1"] = { opts = { can_reason = true } },
+										"Pro/deepseek-ai/DeepSeek-V3",
+									},
 								},
 							},
-						},
-					})
-				end
+						})
+					end,
+					aliyun = function()
+						return require("codecompanion.adapters").extend("openai_compatible", {
+							env = {
+								url = "https://dashscope.aliyuncs.com/compatible-mode",
+								api_key = "ALIYUN_API_KEY",
+							},
+							schema = {
+								model = {
+									default = "deepseek-r1",
+									choices = {
+										["deepseek-r1"] = { opts = { can_reason = true } },
+										"deepseek-v3",
+									},
+								},
+							},
+						})
+					end,
+				},
 			},
 			strategies = {
 				chat = {

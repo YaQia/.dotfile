@@ -5,7 +5,7 @@ set -x DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 source ~/.config/fish/private_apis.fish
 # set -x http_proxy http://127.0.0.1:7892
 # set -x https_proxy http://127.0.0.1:7892
-set -x all_proxy socks5h://127.0.0.1:7891
+# set -x all_proxy socks5h://127.0.0.1:7891
 set -x EDITOR /bin/nvim
 set -gx HSA_OVERRIDE_GFX_VERSION 11.0.0
 set -gx ROCM_PATH /opt/rocm

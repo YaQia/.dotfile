@@ -40,8 +40,9 @@ keymap("n", "<C-Right>", "<Cmd>vertical resize -2<cr>", opt)
 -- this is only okay when not using bufferline
 keymap("n", "<A-l>", "<Cmd>tabnext<cr>", opt)
 keymap("n", "<A-h>", "<Cmd>tabprevious<cr>", opt)
-keymap("n", "<A-L>", "<Cmd>+tabmove<cr>", opt)
-keymap("n", "<A-H>", "<Cmd>-tabmove<cr>", opt)
+-- attention: tabmove has no autocmd events, so lualine will not refresh
+keymap("n", "<A-S-l>", ":+tabmove<cr>", opt)
+keymap("n", "<A-S-h>", ":-tabmove<cr>", opt)
 for i = 1, 9 do
 	vim.keymap.set("n", "<A-" .. tostring(i) .. ">", tostring(i) .. "gt", { silent = true })
 end
