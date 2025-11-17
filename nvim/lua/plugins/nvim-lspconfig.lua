@@ -3,6 +3,7 @@ local config = function()
 		"asm_lsp",
 		"clangd",
 		"rust_analyzer",
+		"ruff",
 		"gopls",
 		"bashls",
 		"lua_ls",
