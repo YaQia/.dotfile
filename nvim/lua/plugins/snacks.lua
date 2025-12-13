@@ -22,7 +22,7 @@ return {
 			},
 		},
 		indent = {
-			enabled = false,
+			enabled = true,
 			animate = {
 				enabled = false,
 				easing = "outQuad",

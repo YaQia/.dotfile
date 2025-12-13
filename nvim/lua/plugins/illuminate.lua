@@ -2,7 +2,8 @@ local config = function()
 	require("illuminate").configure({
 		providers = {
 			"lsp",
-			-- "treesitter",
+			"treesitter",
+			-- "regex",
 		},
 		filetypes_denylist = {
 			"dirvish",
@@ -14,7 +15,7 @@ local config = function()
 end
 
 return {
-	"RRethy/vim-illuminate",
+	"YaQia/vim-illuminate",
 	event = { "CursorHold", "CursorHoldI" },
 	enabled = true,
 	-- event = { "LspAttach" },

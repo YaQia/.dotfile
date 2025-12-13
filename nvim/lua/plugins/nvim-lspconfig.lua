@@ -28,7 +28,8 @@ local config = function()
 		-- "golangci_lint_ls",
 		-- "jdtls",
 		-- "drools_lsp",
-		"zls",
+		-- "zls",
+		"tinymist",
 	}
 
 	local opts

@@ -1,6 +1,7 @@
 return {
 	"saghen/blink.indent",
-	lazy = false,
+	enabled = false,
+	-- lazy = false,
 	--- @module 'blink.indent'
 	--- @type blink.indent.Config
 	opts = {

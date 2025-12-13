@@ -1,5 +1,6 @@
 return {
 	"olimorris/codecompanion.nvim",
+	version = "v17.33.0",
 	config = function()
 		require("codecompanion").setup({
 			opts = {

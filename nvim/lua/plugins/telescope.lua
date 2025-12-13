@@ -13,6 +13,14 @@ local config = function()
 				"--smart-case",
 				"--hidden",
 			},
+			mappings = {
+				i = {
+					["<S-Enter>"] = "file_tab",
+				},
+				n = {
+					["<S-Enter>"] = "file_tab",
+				},
+			},
 		},
 		pickers = {
 			find_files = {

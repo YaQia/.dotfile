@@ -38,6 +38,7 @@ return {
 			yaml = { "prettier" },
 			vue = { "prettier" },
 			markdown = { "prettier", "cbfmt" },
+			typst = { "typstyle" },
 		},
 		-- Set default options
 		default_format_opts = {
