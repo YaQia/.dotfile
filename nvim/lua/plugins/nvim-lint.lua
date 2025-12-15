@@ -1,11 +1,11 @@
 return {
-	"mfussenegger/nvim-lint",
+	dir = "~/nvim-lint",
 	-- lazy = false,
 	event = { "BufReadPost", "BufNewFile" },
 	config = function()
 		require("lint").linters_by_ft = {
 			-- lua = { "luacheck" },
-			markdown = { "markdownlint" },
+			markdown = { "markdownlint", "cspell" },
 			-- c = { "clangtidy" },
 			-- cpp = { "clangtidy" },
 			-- rust = { "clippy" },
@@ -21,6 +21,7 @@ return {
 			},
 			javascript = { "eslint" },
 			typescript = { "eslint" },
+			typst = { "cspell" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()

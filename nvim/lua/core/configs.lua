@@ -1,7 +1,7 @@
 -- enable cache to speed up nvim load
 vim.loader.enable()
 -- this should be can for each computer
-vim.g.node_host_prog = "/home/ethan/.npm-global/bin/neovim-node-host"
+-- vim.g.node_host_prog = "/home/ethan/.npm-global/bin/neovim-node-host"
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -35,6 +35,20 @@ o.smartindent = true
 o.splitbelow = true -- force window to be splited into the bottom
 o.splitright = true
 o.wrap = false -- display lines as one long line
+vim.api.nvim_create_augroup("DocTypeSettings", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = "DocTypeSettings",
+
+	-- 当文件类型是 latex, markdown, 或 typst 时触发
+	pattern = { "tex", "latex", "markdown", "md", "typst", "tss" },
+
+	-- 执行的命令：设置 wrap 选项为 true
+	-- vim.opt_local 用于只在当前缓冲区设置选项，这是最佳实践
+	callback = function()
+		vim.opt_local.wrap = true
+		-- vim.opt_local.textwidth = 80 -- 设置文本宽度（配合 wrap 可能有用）
+	end,
+})
 o.swapfile = false
 o.backup = false
 -- o.undodir = os.getenv("HOME") .. "/.vim/undodir"
