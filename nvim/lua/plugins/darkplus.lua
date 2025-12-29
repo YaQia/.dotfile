@@ -1,6 +1,7 @@
 -- themes
 return {
 	"YaQia/darkplus.nvim",
+	-- enabled = false,
 	lazy = false,
 	-- event = "VimEnter",
 	-- for some reason, lspconfig will change the border highlight

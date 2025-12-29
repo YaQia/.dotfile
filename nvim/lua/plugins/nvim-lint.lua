@@ -1,5 +1,5 @@
 return {
-	dir = "~/nvim-lint",
+	"mfussenegger/nvim-lint",
 	-- lazy = false,
 	event = { "BufReadPost", "BufNewFile" },
 	config = function()
@@ -12,7 +12,7 @@ return {
 			sh = { "bash" },
 			bash = { "bash" },
 			fish = { "fish" },
-			-- python = { "pylint" },
+			python = { "ruff" },
 			html = { "htmlhint" },
 			-- css = { "stylelint" },
 			-- scss = { "stylelint" },

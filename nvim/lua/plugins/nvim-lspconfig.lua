@@ -8,7 +8,7 @@ local config = function()
 		"bashls",
 		"lua_ls",
 		"yamlls",
-		"pyright",
+		-- "pyright",
 		"html",
 		"cssls",
 		-- "tailwindcss",
@@ -30,6 +30,7 @@ local config = function()
 		-- "drools_lsp",
 		-- "zls",
 		"tinymist",
+		"ty",
 	}
 
 	local opts
