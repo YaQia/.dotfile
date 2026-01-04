@@ -8,7 +8,7 @@ return {
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
 		animate = {
-			enabled = true,
+			enabled = false,
 			fps = 120,
 		},
 		bigfile = { enabled = true },

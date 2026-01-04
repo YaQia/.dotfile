@@ -280,16 +280,12 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
-// spawn-at-startup "ibus-daemon"
 spawn-at-startup "fcitx5"
 spawn-at-startup "kanshi"
-// spawn-at-startup "dms" "run"
-// spawn-at-startup "qs" "-c" "noctalia-shell"
-// spawn-at-startup "mihomo-party"
+spawn-at-startup "dms" "run"
+spawn-at-startup "mihomo-party"
 spawn-at-startup "xrdb" "-merge" "/home/ethan/.Xresources"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
 environment {
     // DISPLAY ":0"
@@ -299,7 +295,8 @@ environment {
     XMODIFIERS "@im=fcitx"
     SDL_IM_MODULE "fcitx"
     DMS_SCREENSHOT_EDITOR "swappy"
-    QT_QPA_PLATFORMTHEME "gtk3"
+    LANG "zh_CN.UTF-8"
+    LANGUAGE "zh_CN:en_US"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.

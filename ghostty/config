@@ -1,4 +1,4 @@
-theme = light:"Builtin Tango Light",dark:"Builtin Tango Dark"
+theme = light:Builtin Tango Light,dark:Builtin Tango Dark
 font-family = "FiraCode Nerd Font"
 font-size = 11
 window-padding-balance = true

@@ -1,6 +1,5 @@
 return {
-	"YaQia/typst-preview.nvim",
-	version = "1.*",
+	"chomosuke/typst-preview.nvim",
 	ft = "typst",
 	dependencies = {
 		"neovim/nvim-lspconfig",

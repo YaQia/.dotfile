@@ -30,7 +30,7 @@ local config = function()
 		-- "drools_lsp",
 		-- "zls",
 		"tinymist",
-		"ty",
+		-- "ty",
 	}
 
 	local opts
