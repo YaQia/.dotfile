@@ -363,7 +363,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    exclude app-id=r#"^(wps|wpp|et|pdf|steam)$"#
+    exclude app-id=r#"^(wps|wpp|et|pdf|steam|wechat)$"#
     geometry-corner-radius 15
     clip-to-geometry true
     // draw-border-with-background false
