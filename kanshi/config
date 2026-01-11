@@ -1,0 +1,28 @@
+profile {  
+    output "Dell Inc. DELL U2723QE B5Q1CP3" enable scale 2.0 position 0,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 position 240,1080 adaptive_sync on
+}  
+  
+profile {
+    output "PNP(AOC) CU34P2C SOANBHA000165" mode 3440x1440@99.982 enable scale 2.0 position 0,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 position 140,720 adaptive_sync on
+}
+
+profile {
+    output DP-1 enable scale 2.0 position 0,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on
+}
+
+profile {
+    output HDMI-A-1 enable scale 2.0 position 0,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on
+}
+
+profile {
+    output DP-2 enable scale 2.0 position 0,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 position 240,1080 adaptive_sync on
+}
+
+profile {
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 position 140,720 adaptive_sync on
+}

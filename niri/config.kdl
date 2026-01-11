@@ -325,6 +325,23 @@ animations {
     // slowdown 3.0
 }
 
+recent-windows {
+    highlight {
+        corner-radius 16
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
+    }
+}
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
@@ -364,7 +381,7 @@ window-rule {
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
     exclude app-id=r#"^(wps|wpp|et|pdf|steam|wechat)$"#
-    geometry-corner-radius 15
+    geometry-corner-radius 16
     clip-to-geometry true
     // draw-border-with-background false
 }
@@ -656,3 +673,5 @@ layer-rule {
 hotkey-overlay {
     skip-at-startup
 }
+
+include "dms/cursor.kdl"

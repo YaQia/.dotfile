@@ -5,7 +5,7 @@ return {
 	-- opts = {
 	-- 	check_ts = true,
 	-- },
-	config = function ()
+	config = function()
 		require("nvim-autopairs").setup({
 			check_ts = true,
 		})

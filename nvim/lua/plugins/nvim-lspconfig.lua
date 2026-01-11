@@ -28,18 +28,17 @@ local config = function()
 		-- "golangci_lint_ls",
 		-- "jdtls",
 		-- "drools_lsp",
-		-- "zls",
+		"zls",
 		"tinymist",
 		-- "ty",
 	}
 
 	local opts
 	for _, server in pairs(servers) do
+		opts = {}
 		local require_ok, conf_opts = pcall(require, "plugins.lsp_settings." .. server)
 		if require_ok then
-			opts = conf_opts
-		else
-			opts = {}
+			opts = vim.tbl_deep_extend("force", conf_opts, opts)
 		end
 
 		opts.capabilities = require("blink.cmp").get_lsp_capabilities(opts.capabilities)

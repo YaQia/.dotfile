@@ -20,11 +20,43 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
+local function get_lsp_diagnostics()
+	-- 获取当前 buffer 的所有 LSP 客户端
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
+	local counts = { 0, 0, 0, 0 } -- Error, Warn, Info, Hint
+
+	for _, client in ipairs(clients) do
+		-- 获取该客户端在全局范围内的所有诊断
+		local diagnostics = vim.diagnostic.get(nil, {
+			namespace = vim.lsp.diagnostic.get_namespace(client.id),
+		})
+
+		for _, d in ipairs(diagnostics) do
+			if d.severity == vim.diagnostic.severity.ERROR then
+				counts[1] = counts[1] + 1
+			elseif d.severity == vim.diagnostic.severity.WARN then
+				counts[2] = counts[2] + 1
+			elseif d.severity == vim.diagnostic.severity.INFO then
+				counts[3] = counts[3] + 1
+			elseif d.severity == vim.diagnostic.severity.HINT then
+				counts[4] = counts[4] + 1
+			end
+		end
+	end
+
+	return {
+		error = counts[1],
+		warn = counts[2],
+		info = counts[3],
+		hint = counts[4],
+	}
+end
+
 local diagnostics = {
 	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn" },
-	symbols = { error = " ", warn = " " },
+	sources = { get_lsp_diagnostics },
+	sections = { "error", "warn", "info", "hint" },
+	symbols = { error = " ", warn = " ", info = " ", hint = " " },
 	colored = true,
 	update_in_insert = false,
 	always_visible = false,

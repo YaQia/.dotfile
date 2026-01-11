@@ -26,6 +26,10 @@ local config = function()
 			find_files = {
 				theme = "dropdown",
 			},
+			diagnostics = {
+				theme = "ivy",
+				initial_mode = "normal",
+			},
 			lsp_references = {
 				theme = "cursor",
 				initial_mode = "normal",
