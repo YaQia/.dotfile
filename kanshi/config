@@ -9,13 +9,13 @@ profile {
 }
 
 profile {
-    output DP-1 enable scale 2.0 position 0,0
     output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on
+    output DP-1 enable scale 2.0
 }
 
 profile {
-    output HDMI-A-1 enable scale 2.0 position 0,0
     output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on
+    output HDMI-A-1 enable scale 1.5
 }
 
 profile {
