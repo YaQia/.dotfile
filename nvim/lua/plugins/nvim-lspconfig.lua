@@ -8,7 +8,7 @@ local config = function()
 		"bashls",
 		"lua_ls",
 		"yamlls",
-		-- "pyright",
+		"pyright",
 		"html",
 		"cssls",
 		-- "tailwindcss",

@@ -133,10 +133,10 @@ keymap("x", "p", '"_dP')
 
 local opts = { nowait = true, silent = true }
 
-keymap("n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
+-- keymap("n", "gD", "<cmd>Glance definitions<cr>", opts)
 -- This conflicts with nvim-ufo --
-keymap("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
-keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+keymap("n", "gd", "<cmd>Glance definitions<cr>", opts)
+keymap("n", "gr", "<cmd>Glance references<cr>", opts)
 -- keymap("n", "gr", vim.lsp.buf.references, opts)
 keymap("n", "K", function()
 	vim.lsp.buf.hover({
@@ -149,8 +149,8 @@ keymap("n", "K", function()
 		-- },
 	})
 end, opts)
-keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
+keymap("n", "gi", "<cmd>Glance implementations<cr>", opts)
 -- goto parent
-keymap("n", "gI", "<cmd>Telescope lsp_incoming_calls<cr>", opts)
+keymap("n", "gI", "<cmd>Glance incoming_calls<cr>", opts)
 -- goto child
-keymap("n", "gO", "<cmd>Telescope lsp_outgoing_calls<cr>", opts)
+keymap("n", "gO", "<cmd>Glance outgoing_calls<cr>", opts)

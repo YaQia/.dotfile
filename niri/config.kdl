@@ -85,7 +85,7 @@ output "eDP-1" {
     // mode "1920x1080@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    // scale 2
+    scale 2
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -224,7 +224,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -240,22 +240,22 @@ layout {
         // window. These will also remove client-side shadows if the window
         // draws any.
         // 
-        draw-behind-window true
+        // draw-behind-window true
 
         // You can change how shadows look. The values below are in logical
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 30
+        softness 16
 
         // Spread expands the shadow.
-        spread 5
+        spread 0
 
         // Offset moves the shadow relative to the window.
-        offset x=0 y=5
+        offset x=0 y=0
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        color "#0004"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -271,7 +271,10 @@ layout {
     }
 
     tab-indicator {
-        position "top"
+        position "left"
+        // place-within-column
+        // length total-proportion=0.05
+        gap -1
     }
 }
 
@@ -304,7 +307,7 @@ environment {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -381,7 +384,7 @@ window-rule {
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
     exclude app-id=r#"^(wps|wpp|et|pdf|steam|wechat)$"#
-    geometry-corner-radius 16
+    geometry-corner-radius 14
     clip-to-geometry true
     // draw-border-with-background false
 }
@@ -409,7 +412,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     // Mod+A hotkey-overlay-title="Run Application" { spawn "fuzzel"; }
     // Mod+A hotkey-overlay-title="Run Application" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "ghostty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "ghostty" "+new-window"; }
     Mod+S hotkey-overlay-title="Run Search" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+N hotkey-overlay-title="Run Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Mod+M hotkey-overlay-title="Run System monitor" { spawn "dms" "ipc" "call" "processlist" "toggle"; }
@@ -675,3 +678,6 @@ hotkey-overlay {
 }
 
 include "dms/cursor.kdl"
+include "dms/binds.kdl"
+
+// include "dms/outputs.kdl"

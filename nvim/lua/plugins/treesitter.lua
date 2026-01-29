@@ -59,6 +59,7 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
+	branch = "master",
 	build = ":TSUpdate",
 	-- lazy = false,
 	-- event = "VimEnter",

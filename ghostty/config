@@ -1,3 +1,4 @@
+clipboard-read = "allow"
 theme = light:Builtin Tango Light,dark:Builtin Tango Dark
 font-family = "FiraCode Nerd Font"
 font-size = 11

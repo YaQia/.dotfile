@@ -110,31 +110,8 @@ local config = function()
 		-- LSP group
 		{ "<leader>l", group = "LSP" },
 		{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
-		{
-			"<leader>ld",
-			function()
-				-- 1. 获取当前 buffer 关联的 LSP 客户端
-				local clients = vim.lsp.get_clients({ bufnr = 0 })
-
-				-- 如果没有 LSP 客户端，就退回到普通诊断列表
-				if #clients == 0 then
-					require("telescope.builtin").diagnostics()
-					return
-				end
-
-				-- 2. 拿到第一个客户端的 namespace (通常一个 Buffer 对应一个主要的语言 LSP)
-				-- 如果你有多个 LSP 且想过滤特定的（比如只看 zls），可以加个判断：
-				-- if client.name == "zls" then ...
-				local client = clients[1]
-				local ns = vim.lsp.diagnostic.get_namespace(client.id)
-
-				-- 3. 调用 Telescope，传入动态获取的 namespace
-				require("telescope.builtin").diagnostics({
-					namespace = ns,
-				})
-			end,
-			desc = "Diagnostics",
-		},
+		{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
+		{ "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
 		{
 			"<leader>li",
 			function()
@@ -143,8 +120,8 @@ local config = function()
 			desc = "Toggle Inlay Hint",
 		},
 		{ "<leader>lI", "<cmd>LspInfo<cr>", desc = "Info" },
-		{ "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next Diagnostics" },
-		{ "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Prev Diagnostics" },
+		{ "<leader>lj", "<cmd>lua vim.diagnostic.jump({count=1, float=true})<CR>", desc = "Next Diagnostics" },
+		{ "<leader>lk", "<cmd>lua vim.diagnostic.jump({count=-1, float=true})<CR>", desc = "Prev Diagnostics" },
 		{ "<leader>lf", "<cmd>lua require('conform').format({async=true})<cr>", desc = "Format" },
 		{ "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action" },
 		{ "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "Quickfix" },
