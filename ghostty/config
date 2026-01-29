@@ -15,6 +15,7 @@ gtk-titlebar-hide-when-maximized = false
 gtk-single-instance = true
 adjust-box-thickness = 2
 adjust-cursor-thickness = 2
+shell-integration-features = ssh-terminfo
 
 keybind = ctrl+shift+|=new_split:right
 keybind = ctrl+shift+enter=new_split:down
