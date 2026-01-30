@@ -24,7 +24,7 @@
   "nvim-cursorline": { "branch": "main", "commit": "804f0023692653b2b2368462d67d2a87056947f9" },
   "nvim-highlight-colors": { "branch": "main", "commit": "e2cb22089cc2358b2b995c09578224f142de6039" },
   "nvim-lint": { "branch": "master", "commit": "b3292aac30b935d4cccf0904053d1c7930df8a20" },
-  "nvim-lspconfig": { "branch": "master", "commit": "5fef3b4a5f1057553b78d048322782c3a9ae69c6" },
+  "nvim-lspconfig": { "branch": "master", "commit": "79c9a15be5731bc8694840a8fb0c9141c20a80c0" },
   "nvim-navic": { "branch": "master", "commit": "f5eba192f39b453675d115351808bd51276d9de5" },
   "nvim-texlabconfig": { "branch": "master", "commit": "bac44e8e4dfe37fc4f4ffba86e144fe5da2322e4" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },

@@ -5,6 +5,7 @@ source ~/.config/fish/private_apis.fish
 # set -x https_proxy http://127.0.0.1:7892
 # set -x all_proxy socks5h://127.0.0.1:7891
 set -x EDITOR /bin/nvim
+set -x MANPAGER "nvim +Man!"
 #set -x TERMINAL /bin/ghostty
 #set -x LANG zh_CN.UTF-8
 #set -x LANGUAGE zh_CN:en_US
