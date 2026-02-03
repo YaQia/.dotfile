@@ -286,7 +286,7 @@ layout {
 spawn-at-startup "fcitx5"
 spawn-at-startup "kanshi"
 spawn-at-startup "dms" "run"
-spawn-at-startup "mihomo-party"
+// spawn-at-startup "mihomo-party"
 spawn-at-startup "xrdb" "-merge" "/home/ethan/.Xresources"
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
