@@ -284,7 +284,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "fcitx5"
-spawn-at-startup "kanshi"
+// spawn-at-startup "kanshi"
 spawn-at-startup "dms" "run"
 // spawn-at-startup "mihomo-party"
 spawn-at-startup "xrdb" "-merge" "/home/ethan/.Xresources"
@@ -383,7 +383,6 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    exclude app-id=r#"^(wps|wpp|et|pdf|steam|wechat)$"#
     geometry-corner-radius 14
     clip-to-geometry true
     // draw-border-with-background false
@@ -392,6 +391,11 @@ window-rule {
 window-rule {
     match app-id="ghostty"
     draw-border-with-background false
+}
+
+window-rule {
+    match title="^飞书会议$"
+    open-floating true
 }
 
 binds {
@@ -679,5 +683,5 @@ hotkey-overlay {
 
 include "dms/cursor.kdl"
 include "dms/binds.kdl"
-
-// include "dms/outputs.kdl"
+include "dms/outputs.kdl"
+include "dms/windowrules.kdl"

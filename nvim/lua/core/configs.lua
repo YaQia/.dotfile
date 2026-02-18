@@ -135,3 +135,25 @@ vim.lsp.set_log_level("off")
 -- })
 
 -- vim.cmd[[ autocmd BufRead,BufNewFile *.drl set filetype=drools ]]
+
+--- blink fix auto-wrap bug ---
+-- vim.api.nvim_create_autocmd("User", {
+-- 	pattern = "BlinkCmpMenuOpen",
+-- 	callback = function()
+-- 		local formatoptions = vim.opt.formatoptions:get()
+-- 		if formatoptions.t then
+-- 			vim.b.restore_formatoptions_t = true
+-- 			vim.opt.formatoptions:remove("t")
+-- 		end
+-- 	end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("User", {
+-- 	pattern = "BlinkCmpMenuClose",
+-- 	callback = function()
+-- 		if vim.b.restore_formatoptions_t then
+-- 			vim.opt.formatoptions:append("t")
+-- 			vim.b.restore_formatoptions_t = nil
+-- 		end
+-- 	end,
+-- })

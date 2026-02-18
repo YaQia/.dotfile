@@ -9,6 +9,10 @@ profile {
 }
 
 profile {
+    output "Qingdao Haier Electronics Co., Ltd. Haier TV 0x00000001" mode 4096x2160@60.000 enable scale 2.0 position 0,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" disable scale 2.0 position 140,720 adaptive_sync on
+}
+profile {
     output "SKYDATA S.P.A. Coocaa TV *" mode 1920x1080@60.000 enable scale 1.5 position 0,0
     output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on position 1280,0
 }

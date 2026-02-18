@@ -22,7 +22,7 @@ return {
 		-- See the full "keymap" documentation for information on defining your own keymap.
 		keymap = {
 			-- set to 'none' to disable the 'default' preset
-			preset = "super-tab",
+			preset = "enter",
 
 			["<Tab>"] = {
 				"select_next",
