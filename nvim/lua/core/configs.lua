@@ -91,7 +91,7 @@ o.jumpoptions = "stack" -- helps jumps out of the definition without too many C-
 
 local config = {
 	-- disable virtual text
-	virtual_text = true,
+	virtual_text = false,
 	-- show signs
 	signs = {
 		text = {
@@ -125,7 +125,7 @@ vim.filetype.add({
 vim.treesitter.language.register("markdown", { "mdx" })
 
 -- lsp settings
-vim.lsp.set_log_level("off")
+vim.lsp.log.set_level(vim.log.levels.OFF)
 -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({
 -- 	border = "rounded",
 -- })

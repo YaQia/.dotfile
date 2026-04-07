@@ -136,6 +136,8 @@ local opts = { nowait = true, silent = true }
 -- keymap("n", "gD", "<cmd>Glance definitions<cr>", opts)
 -- This conflicts with nvim-ufo --
 keymap("n", "gd", "<cmd>Glance definitions<cr>", opts)
+keymap("n", "<C-w>gd", "<cmd>tab split | Glance definitions<cr>", opts)
+keymap("n", "<C-w>vgd", "<cmd>vsplit | Glance definitions<cr>", opts)
 keymap("n", "gr", "<cmd>Glance references<cr>", opts)
 -- keymap("n", "gr", vim.lsp.buf.references, opts)
 keymap("n", "K", function()

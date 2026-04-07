@@ -190,9 +190,6 @@ return {
 		-- Expand 'cc' into 'CodeCompanion' in the command line
 		vim.cmd([[cab ai CodeCompanion]])
 	end,
-	init = function()
-		require("plugins.codecompanion.fidget-spinner"):init()
-	end,
 	-- lazy = false,
 	event = "VeryLazy",
 	dependencies = {
