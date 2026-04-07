@@ -284,7 +284,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "fcitx5"
-// spawn-at-startup "kanshi"
+spawn-at-startup "kanshi"
 spawn-at-startup "dms" "run"
 // spawn-at-startup "mihomo-party"
 spawn-at-startup "xrdb" "-merge" "/home/ethan/.Xresources"
@@ -295,6 +295,7 @@ environment {
     // GTK_IM_MODULE "fcitx"
     QT_IM_MODULE "fcitx"
     QT_IM_MODULES "wayland;fcitx;ibus"
+    QT_QPA_PLATFORMTHEME "gtk3"
     XMODIFIERS "@im=fcitx"
     SDL_IM_MODULE "fcitx"
     DMS_SCREENSHOT_EDITOR "swappy"
@@ -598,11 +599,12 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
+    Mod+Ctrl+F { maximize-window-to-edges; }
     Mod+Shift+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Alt+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
 
@@ -681,7 +683,8 @@ hotkey-overlay {
     skip-at-startup
 }
 
-include "dms/cursor.kdl"
 include "dms/binds.kdl"
-include "dms/outputs.kdl"
-include "dms/windowrules.kdl"
+// include "dms/outputs.kdl"
+include "dms/colors.kdl"
+include "dms/alttab.kdl"
+include "dms/wpblur.kdl"
