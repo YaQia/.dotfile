@@ -119,6 +119,7 @@ vim.diagnostic.config(config)
 vim.filetype.add({
 	extension = {
 		mdx = "mdx",
+        ebnf = "ebnf",
 	},
 })
 

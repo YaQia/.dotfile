@@ -56,16 +56,15 @@ local opts = {
 }
 return {
 	"nvim-treesitter/nvim-treesitter",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-	},
-	branch = "master",
+	-- dependencies = {
+	-- 	"nvim-treesitter/nvim-treesitter-textobjects",
+	-- },
+	branch = "main",
 	build = ":TSUpdate",
-	-- lazy = false,
+	lazy = false,
 	-- event = "VimEnter",
-	event = { "VeryLazy" },
-	config = function()
-		local configs = require("nvim-treesitter.configs")
-		configs.setup(opts)
-	end,
+	-- config = function()
+	-- 	local configs = require("nvim-treesitter.configs")
+	-- 	configs.setup(opts)
+	-- end,
 }
