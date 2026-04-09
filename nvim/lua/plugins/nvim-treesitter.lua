@@ -1,3 +1,53 @@
+local ensure_installed = {
+	"bash",
+	"c",
+	"cpp",
+	"rust",
+	"java",
+	"javascript",
+	"python",
+	"go",
+	"gomod",
+	"lua",
+	"vim",
+	"vimdoc",
+	"query",
+	"html",
+	"css",
+	"fish",
+	"doxygen",
+	"comment",
+	"luadoc",
+	"regex",
+	"yaml",
+	"toml",
+	"ebnf",
+	"gitcommit",
+	"latex",
+	"markdown",
+}
+local filetypes = {
+	"bash",
+	"c",
+	"cpp",
+	"rust",
+	"java",
+	"javascript",
+	"python",
+	"go",
+	"lua",
+	"vim",
+	"help",
+	"html",
+	"css",
+	"fish",
+	"yaml",
+	"toml",
+	"ebnf",
+	"gitcommit",
+	"latex",
+	"markdown",
+}
 local opts = {
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
 	-- ensure_installed = {
@@ -56,15 +106,26 @@ local opts = {
 }
 return {
 	"nvim-treesitter/nvim-treesitter",
-	-- dependencies = {
-	-- 	"nvim-treesitter/nvim-treesitter-textobjects",
-	-- },
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-textobjects",
+	},
 	branch = "main",
 	build = ":TSUpdate",
 	lazy = false,
 	-- event = "VimEnter",
-	-- config = function()
-	-- 	local configs = require("nvim-treesitter.configs")
-	-- 	configs.setup(opts)
-	-- end,
+	config = function()
+		require("nvim-treesitter").install(ensure_installed)
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = ensure_installed,
+			callback = function()
+				-- syntax highlighting, provided by Neovim
+				vim.treesitter.start()
+				-- folds, provided by Neovim
+				vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+				vim.wo.foldmethod = "expr"
+				-- indentation, provided by nvim-treesitter
+				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			end,
+		})
+	end,
 }
