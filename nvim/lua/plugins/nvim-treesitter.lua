@@ -25,6 +25,7 @@ local ensure_installed = {
 	"gitcommit",
 	"latex",
 	"markdown",
+	"git_rebase",
 }
 local filetypes = {
 	"bash",
@@ -47,6 +48,7 @@ local filetypes = {
 	"gitcommit",
 	"latex",
 	"markdown",
+	"gitrebase",
 }
 local opts = {
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -116,7 +118,7 @@ return {
 	config = function()
 		require("nvim-treesitter").install(ensure_installed)
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = ensure_installed,
+			pattern = filetypes,
 			callback = function()
 				-- syntax highlighting, provided by Neovim
 				vim.treesitter.start()
