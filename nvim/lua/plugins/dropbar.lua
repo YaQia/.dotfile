@@ -1,6 +1,5 @@
 return {
-	"YaQia/dropbar.nvim",
-	dir = "/home/ethan/Documents/dropbar.nvim",
+	"Bekaboo/dropbar.nvim",
 	-- event = "VeryLazy",
 	lazy = false,
 	dependencies = {

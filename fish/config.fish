@@ -1,5 +1,6 @@
 fish_add_path ~/.cargo/bin ~/.local/bin /usr/share/bcc/tools
 set -x DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
+set -x PATH ~/zig $PATH
 source ~/.config/fish/private_apis.fish
 # set -x http_proxy http://127.0.0.1:7892
 # set -x https_proxy http://127.0.0.1:7892

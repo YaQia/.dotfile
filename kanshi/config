@@ -18,8 +18,23 @@ profile {
 }
 
 profile {
-    output "PNP(DZW) SMART TV UHD *" mode 3840x2160@30.000 enable scale 2 position -1440,0
+    output "PNP(DZW) SMART TV UHD *" mode 3840x2160@30.000 enable scale 2.0 position -1440,0
     output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on position 0,0
+}
+
+profile {
+    output "HKC OVERSEAS LIMITED MG24Q *" mode 2560x1440@143.912 scale 1.2 position 1440,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" scale 2.0 adaptive_sync on position 0,0
+}
+
+profile {
+    output "Dell Inc. DELL D2421DS *" scale 1.4 position 1440,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on position 0,0
+}
+
+profile {
+    output "Harris Corporation LE42B70 *" mode 1920x1080@60.000 scale 1.0 position 0,0
+    output "Tianma Microelectronics Ltd. TL140ADXP24-0 Unknown" enable scale 2.0 adaptive_sync on position 0,1080
 }
 
 profile {

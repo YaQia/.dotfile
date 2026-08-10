@@ -283,9 +283,12 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "fcitx5"
-spawn-at-startup "kanshi"
-spawn-at-startup "dms" "run"
+spawn-at-startup "fcitx5"                           // IME
+spawn-at-startup "kanshi"                           // monitor
+// spawn-at-startup "wayle" "panel" "start"            // bar
+// spawn-at-startup "awww-daemon"                      // wallpaper
+// spawn-at-startup "walker" "--gapplication-service"  // launcher
+spawn-at-startup "dms" "run"                        // shell
 // spawn-at-startup "mihomo-party"
 spawn-at-startup "xrdb" "-merge" "/home/ethan/.Xresources"
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
@@ -369,6 +372,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id=r#"^org\.gnome\.Nautilus$"#
+    open-floating true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -379,14 +387,6 @@ window-rule {
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
-}
-
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-window-rule {
-    geometry-corner-radius 14
-    clip-to-geometry true
-    // draw-border-with-background false
 }
 
 window-rule {
@@ -418,11 +418,11 @@ binds {
     // Mod+A hotkey-overlay-title="Run Application" { spawn "fuzzel"; }
     // Mod+A hotkey-overlay-title="Run Application" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "ghostty" "+new-window"; }
-    Mod+S hotkey-overlay-title="Run Search" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Mod+S hotkey-overlay-title="Search Anything" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+N hotkey-overlay-title="Run Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Mod+M hotkey-overlay-title="Run System monitor" { spawn "dms" "ipc" "call" "processlist" "toggle"; }
     Mod+P hotkey-overlay-title="Run Power Menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -688,3 +688,6 @@ include "dms/binds.kdl"
 include "dms/colors.kdl"
 include "dms/alttab.kdl"
 include "dms/wpblur.kdl"
+include "dms/cursor.kdl"
+include "dms/layout.kdl"
+include "dms/windowrules.kdl"

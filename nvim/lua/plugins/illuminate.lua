@@ -15,7 +15,7 @@ local config = function()
 end
 
 return {
-	"YaQia/vim-illuminate",
+	"RRethy/vim-illuminate",
 	event = { "CursorHold", "CursorHoldI" },
 	enabled = true,
 	-- event = { "LspAttach" },
