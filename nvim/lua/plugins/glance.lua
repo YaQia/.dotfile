@@ -6,8 +6,10 @@ return {
 	opts = {
 		hooks = {
 			before_open = function(results, open, jump, method)
-				if (method == "definitions" or method == "references") and #results == 1 then
+				if method == "definitions" and #results == 1 then
 					jump(results[1])
+				elseif method == "references" and #results == 2 then
+					jump(results[2])
 				else
 					open(results)
 				end

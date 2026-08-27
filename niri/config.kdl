@@ -284,14 +284,14 @@ layout {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "fcitx5"                           // IME
-spawn-at-startup "kanshi"                           // monitor
+// spawn-at-startup "kanshi"                           // monitor
 // spawn-at-startup "wayle" "panel" "start"            // bar
 // spawn-at-startup "awww-daemon"                      // wallpaper
 // spawn-at-startup "walker" "--gapplication-service"  // launcher
 spawn-at-startup "dms" "run"                        // shell
 // spawn-at-startup "mihomo-party"
-spawn-at-startup "xrdb" "-merge" "/home/ethan/.Xresources"
-spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+// spawn-at-startup "xrdb" "-merge" "/home/ethan/.Xresources"
+// spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
 environment {
     // DISPLAY ":0"

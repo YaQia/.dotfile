@@ -131,7 +131,7 @@ local config = function()
 		{ "<leader>lo", "<cmd>AerialToggle<cr>", desc = "Outline" },
 		-- Search group
 		{ "<leader>s", group = "Search" },
-		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Files" },
+		{ "<leader>sf", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", desc = "Files" },
 		{
 			"<leader>sb",
 			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = true, sort_mru = true})<cr>",
