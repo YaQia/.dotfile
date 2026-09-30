@@ -1,0 +1,34 @@
+# Identity
+set from = "yyaqia@gmail.com"
+set realname = ""
+set use_from = yes
+set envelope_from = yes
+
+# IMAP
+set imap_user = "yyaqia@gmail.com"
+set imap_pass = "`secret-tool lookup service neomutt account yyaqia@gmail.com`"
+
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/草稿"
+set record = "+[Gmail]/已发邮件"
+set trash = "+[Gmail]/已删除邮件"
+
+# SMTP
+set smtp_url = "smtps://yyaqia@gmail.com@smtp.gmail.com:465/"
+set smtp_pass = "`secret-tool lookup service neomutt account yyaqia@gmail.com`"
+
+# Editor
+set editor = "nvim"
+set charset = "utf-8"
+set assumed_charset = "utf-8"
+set edit_headers = yes
+set text_flowed = no
+
+# Threading
+set sort = "threads"
+set sort_aux = "last-date-received"
+set use_threads = yes
+set include = yes
+set attribution = "On %{%Y-%m-%d %H:%M}, %n wrote:"
+set indent_string = "> "
