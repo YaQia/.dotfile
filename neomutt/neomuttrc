@@ -9,7 +9,7 @@ set imap_user = "yyaqia@gmail.com"
 set imap_pass = "`secret-tool lookup service neomutt account yyaqia@gmail.com`"
 
 set folder = "imaps://imap.gmail.com/"
-set spoolfile = "+INBOX"
+set spoolfile = "+Linux Kernel"
 set postponed = "+[Gmail]/草稿"
 set record = "+[Gmail]/已发邮件"
 set trash = "+[Gmail]/已删除邮件"
@@ -26,9 +26,21 @@ set edit_headers = yes
 set text_flowed = no
 
 # Threading
-set sort = "threads"
-set sort_aux = "last-date-received"
 set use_threads = yes
+set sort = "last-date-received"
+set sort_aux = "date"
 set include = yes
 set attribution = "On %{%Y-%m-%d %H:%M}, %n wrote:"
 set indent_string = "> "
+
+# 邮件正文逐行滚动
+bind pager j next-line
+bind pager k previous-line
+
+# 半页滚动
+bind pager d half-down
+bind pager u half-up
+
+# 跳转到正文开头和结尾
+bind pager g top
+bind pager G bottom
