@@ -44,3 +44,6 @@ bind pager u half-up
 # 跳转到正文开头和结尾
 bind pager g top
 bind pager G bottom
+
+# group-chat-reply
+bind index,pager R group-chat-reply
